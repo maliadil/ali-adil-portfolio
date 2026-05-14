@@ -19,7 +19,7 @@ const spaceGrotesk = Space_Grotesk({
 });
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://maliadil.com"),
+  metadataBase: new URL("https://maliadil.site"),
   title: {
     default: "Muhammad Ali Adil | SEO & AI Content Strategist",
     template: "%s | Muhammad Ali Adil",
@@ -43,7 +43,7 @@ export const metadata: Metadata = {
   openGraph: {
     type: "website",
     locale: "en_US",
-    url: "https://maliadil.com",
+    url: "https://maliadil.site",
     title: "Muhammad Ali Adil | SEO & AI Content Strategist",
     description:
       "Helping brands rank on Google & AI Search. 700+ articles published. 35+ brands scaled. Proven first-page results.",
