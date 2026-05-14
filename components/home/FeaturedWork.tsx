@@ -24,11 +24,11 @@ export default function FeaturedWork() {
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          className="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-14"
+          className="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-10 md:mb-14"
         >
           <div>
             <span className="section-label mb-4 inline-flex">Featured Work</span>
-            <h2 className="text-4xl sm:text-5xl font-bold font-heading text-white mt-4">
+            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold font-heading text-white mt-4">
               Case Studies &amp; <span className="gradient-text">SEO Wins</span>
             </h2>
             <p className="text-white/50 mt-3 max-w-lg">
@@ -60,7 +60,7 @@ export default function FeaturedWork() {
                 transition={{ duration: 0.5, delay: i * 0.1 }}
                 className="group"
               >
-                <div className="glass-card-hover p-6 h-full flex flex-col">
+                <div className="glass-card-hover p-5 sm:p-6 h-full flex flex-col">
                   {/* Header */}
                   <div className="flex items-start justify-between mb-4">
                     <div>

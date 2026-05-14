@@ -27,10 +27,10 @@ export default function ServicesPreview() {
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          className="text-center mb-14"
+          className="text-center mb-10 md:mb-14"
         >
           <span className="section-label mb-4 inline-flex">What I Offer</span>
-          <h2 className="text-4xl sm:text-5xl font-bold font-heading text-white mt-4">
+          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold font-heading text-white mt-4">
             Services Built for <span className="gradient-text">Organic Growth</span>
           </h2>
           <p className="text-white/50 mt-3 max-w-xl mx-auto">
@@ -52,7 +52,7 @@ export default function ServicesPreview() {
                 transition={{ delay: i * 0.1 }}
                 className="group"
               >
-                <div className="glass-card-hover p-8 h-full relative overflow-hidden">
+                <div className="glass-card-hover p-6 sm:p-8 h-full relative overflow-hidden">
                   {/* Gradient accent */}
                   <div
                     className={`absolute top-0 left-0 right-0 h-px bg-gradient-to-r ${service.gradient}`}

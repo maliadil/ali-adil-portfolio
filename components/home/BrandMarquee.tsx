@@ -42,7 +42,7 @@ export default function BrandMarquee() {
       <div className="absolute left-0 top-0 bottom-0 w-32 bg-gradient-to-r from-[#070B14] to-transparent z-10 pointer-events-none" />
       <div className="absolute right-0 top-0 bottom-0 w-32 bg-gradient-to-l from-[#070B14] to-transparent z-10 pointer-events-none" />
 
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mb-10 relative z-20">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mb-8 md:mb-10 relative z-20">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -50,7 +50,7 @@ export default function BrandMarquee() {
           className="text-center"
         >
           <span className="section-label mb-4 inline-flex">Brands I&apos;ve Worked With</span>
-          <h2 className="text-3xl sm:text-4xl font-bold font-heading text-white mt-4">
+          <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold font-heading text-white mt-4">
             35+ Brands Scaled with{" "}
             <span className="gradient-text">Strategic SEO Content</span>
           </h2>

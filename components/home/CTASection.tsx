@@ -30,33 +30,33 @@ export default function CTASection() {
             }}
           />
 
-          <div className="relative z-10 p-10 md:p-16 text-center">
+          <div className="relative z-10 p-7 sm:p-10 md:p-16 text-center">
             <motion.div
               initial={{ opacity: 0, scale: 0.9 }}
               whileInView={{ opacity: 1, scale: 1 }}
               viewport={{ once: true }}
               transition={{ delay: 0.1 }}
             >
-              <span className="section-label mb-6 inline-flex">Let&apos;s Work Together</span>
-              <h2 className="text-4xl sm:text-5xl lg:text-6xl font-bold font-heading text-white mt-6 mb-5 leading-tight">
+              <span className="section-label mb-5 inline-flex">Let&apos;s Work Together</span>
+              <h2 className="text-3xl sm:text-4xl lg:text-6xl font-bold font-heading text-white mt-5 mb-5 leading-tight">
                 Ready to Rank on Google
                 <br />
                 <span className="gradient-text">&amp; AI Search?</span>
               </h2>
-              <p className="text-white/60 text-lg max-w-2xl mx-auto mb-10 leading-relaxed">
+              <p className="text-white/60 text-base sm:text-lg max-w-2xl mx-auto mb-8 leading-relaxed">
                 Whether you need a full SEO strategy, AI-optimized content, or a trusted content
                 manager — I help brands grow organically and rank where it matters.
               </p>
 
-              <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                <Link href="/contact" className="btn-primary py-4 px-8 text-base">
+              <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center">
+                <Link href="/contact" className="btn-primary py-3.5 px-6 sm:py-4 sm:px-8 text-sm sm:text-base">
                   <Sparkles className="w-4 h-4" />
                   Start a Project
                   <ArrowRight className="w-4 h-4" />
                 </Link>
                 <a
                   href="mailto:alifps2002@gmail.com"
-                  className="btn-secondary py-4 px-8 text-base"
+                  className="btn-secondary py-3.5 px-6 sm:py-4 sm:px-8 text-sm sm:text-base"
                 >
                   <Mail className="w-4 h-4" />
                   Send an Email

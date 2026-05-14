@@ -153,7 +153,7 @@ export default function AboutPage() {
               transition={{ duration: 0.6 }}
             >
               <span className="section-label mb-5 inline-flex">About Me</span>
-              <h1 className="text-5xl sm:text-6xl font-bold font-heading text-white mt-5 mb-6 leading-tight">
+              <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold font-heading text-white mt-5 mb-6 leading-tight">
                 The Strategist Behind the <span className="gradient-text">Rankings</span>
               </h1>
               <p className="text-lg text-white/60 leading-relaxed mb-6">

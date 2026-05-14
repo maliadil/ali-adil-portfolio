@@ -71,7 +71,7 @@ export default function ServicesPage() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 text-center">
           <motion.div initial={{ opacity: 0, y: 30 }} animate={{ opacity: 1, y: 0 }}>
             <span className="section-label mb-5 inline-flex">What I Offer</span>
-            <h1 className="text-5xl sm:text-6xl font-bold font-heading text-white mt-5 mb-5">
+            <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold font-heading text-white mt-5 mb-5">
               Services Built for <span className="gradient-text">Organic Growth</span>
             </h1>
             <p className="text-white/55 text-lg max-w-2xl mx-auto">

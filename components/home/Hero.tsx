@@ -57,17 +57,35 @@ export default function Hero() {
         }}
       />
 
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full py-20 relative z-10">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full py-14 sm:py-20 relative z-10">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-16 items-center">
 
           {/* Left: Text content */}
           <div>
+            {/* Mobile-only avatar */}
+            <motion.div
+              initial={{ opacity: 0, scale: 0.9 }}
+              animate={{ opacity: 1, scale: 1 }}
+              transition={{ duration: 0.5 }}
+              className="lg:hidden mb-6 flex justify-start"
+            >
+              <div className="relative w-20 h-20 rounded-2xl overflow-hidden ring-2 ring-blue-500/40 bg-[#0e2318]">
+                <Image
+                  src="/hero.png"
+                  alt="Muhammad Ali Adil"
+                  fill
+                  className="object-cover object-center scale-[1.04]"
+                  priority
+                />
+              </div>
+            </motion.div>
+
             {/* Badge */}
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5 }}
-              className="mb-6"
+              className="mb-5"
             >
               <span className="section-label">
                 <Sparkles className="w-3 h-3" />
@@ -80,7 +98,7 @@ export default function Hero() {
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.1 }}
-              className="text-5xl sm:text-6xl xl:text-7xl font-bold font-heading leading-[1.05] tracking-tight mb-6"
+              className="text-4xl sm:text-5xl lg:text-6xl xl:text-7xl font-bold font-heading leading-[1.05] tracking-tight mb-5"
             >
               <span className="text-white">Helping Brands</span>
               <br />
@@ -94,7 +112,7 @@ export default function Hero() {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.2 }}
-              className="text-lg text-white/60 leading-relaxed max-w-xl mb-8"
+              className="text-base sm:text-lg text-white/60 leading-relaxed max-w-xl mb-7"
             >
               SEO &amp; AI Content Strategist with{" "}
               <span className="text-white/90 font-medium">700+ published articles</span>,{" "}
@@ -109,7 +127,7 @@ export default function Hero() {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.3 }}
-              className="flex flex-wrap gap-x-5 gap-y-2 mb-10"
+              className="flex flex-wrap gap-x-4 gap-y-2 mb-8"
             >
               {highlights.map((h) => (
                 <div key={h} className="flex items-center gap-2 text-sm text-white/60">
@@ -126,11 +144,11 @@ export default function Hero() {
               transition={{ duration: 0.6, delay: 0.4 }}
               className="flex flex-col sm:flex-row gap-4"
             >
-              <Link href="/portfolio" className="btn-primary py-4 px-8 text-base">
+              <Link href="/portfolio" className="btn-primary py-3.5 px-6 sm:py-4 sm:px-8 text-sm sm:text-base">
                 View My Work
                 <ArrowRight className="w-4 h-4" />
               </Link>
-              <Link href="/contact" className="btn-secondary py-4 px-8 text-base">
+              <Link href="/contact" className="btn-secondary py-3.5 px-6 sm:py-4 sm:px-8 text-sm sm:text-base">
                 <Sparkles className="w-4 h-4" />
                 Let&apos;s Work Together
               </Link>
@@ -141,7 +159,7 @@ export default function Hero() {
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               transition={{ delay: 0.8 }}
-              className="flex items-center gap-3 mt-8 pt-8 border-t border-white/[0.06]"
+              className="flex items-center gap-3 mt-7 pt-7 border-t border-white/[0.06]"
             >
               <div className="flex -space-x-1">
                 {[...Array(5)].map((_, i) => (

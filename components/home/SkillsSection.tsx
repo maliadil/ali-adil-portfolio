@@ -39,10 +39,10 @@ export default function SkillsSection() {
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          className="text-center mb-14"
+          className="text-center mb-10 md:mb-14"
         >
           <span className="section-label mb-4 inline-flex">Expertise</span>
-          <h2 className="text-4xl sm:text-5xl font-bold font-heading text-white mt-4">
+          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold font-heading text-white mt-4">
             Skills &amp; <span className="gradient-text">Core Competencies</span>
           </h2>
           <p className="text-white/50 mt-3 max-w-xl mx-auto">
@@ -51,7 +51,7 @@ export default function SkillsSection() {
           </p>
         </motion.div>
 
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 mb-16">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 lg:gap-10 mb-10 md:mb-14">
           {/* Category selector */}
           <motion.div
             initial={{ opacity: 0, x: -20 }}
@@ -104,9 +104,9 @@ export default function SkillsSection() {
             initial={{ opacity: 0, x: 20 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
-            className="glass-card p-8"
+            className="glass-card p-6 sm:p-8"
           >
-            <div className="flex items-center gap-3 mb-8">
+            <div className="flex items-center gap-3 mb-6 sm:mb-8">
               <div className="w-10 h-10 rounded-xl bg-gradient-to-br from-blue-600 to-purple-600 flex items-center justify-center">
                 <Icon className="w-5 h-5 text-white" />
               </div>

@@ -76,10 +76,10 @@ export default function Stats() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.5 }}
-          className="text-center mb-16"
+          className="text-center mb-10 md:mb-14"
         >
           <span className="section-label mb-4 inline-flex">By The Numbers</span>
-          <h2 className="text-4xl sm:text-5xl font-bold font-heading text-white mt-4">
+          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold font-heading text-white mt-4">
             Results That{" "}
             <span className="gradient-text">Speak Louder</span>
           </h2>
@@ -98,14 +98,14 @@ export default function Stats() {
               viewport={{ once: true }}
               transition={{ duration: 0.5, delay: i * 0.08 }}
             >
-              <div className="glass-card-hover p-6 lg:p-8 h-full group">
+              <div className="glass-card-hover p-5 sm:p-6 lg:p-8 h-full group">
                 <div
-                  className={`w-12 h-12 rounded-xl ${stat.bg} flex items-center justify-center mb-4 group-hover:scale-110 transition-transform duration-300`}
+                  className={`w-10 h-10 sm:w-12 sm:h-12 rounded-xl ${stat.bg} flex items-center justify-center mb-3 sm:mb-4 group-hover:scale-110 transition-transform duration-300`}
                 >
-                  <stat.icon className={`w-6 h-6 ${stat.color}`} />
+                  <stat.icon className={`w-5 h-5 sm:w-6 sm:h-6 ${stat.color}`} />
                 </div>
                 <div className="flex items-end gap-1 mb-2">
-                  <span className={`text-4xl lg:text-5xl font-bold font-heading ${stat.color}`}>
+                  <span className={`text-3xl sm:text-4xl lg:text-5xl font-bold font-heading ${stat.color}`}>
                     {inView ? (
                       <CountUp
                         end={stat.value}
