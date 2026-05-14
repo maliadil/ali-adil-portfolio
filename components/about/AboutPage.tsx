@@ -213,12 +213,12 @@ export default function AboutPage() {
                     <div className="absolute inset-0 bg-[#0e2318]" />
 
                     <Image
-                      src="/avatar.jpg"
+                      src="/avatar.png"
                       alt="Muhammad Ali Adil — SEO & AI Content Strategist"
                       fill
-                      className="object-cover object-top"
+                      className="object-cover"
                       priority
-                      style={{ opacity: 1 }}
+                      style={{ opacity: 1, objectPosition: "center 22%" }}
                     />
 
                     {/* Bottom gradient fade */}

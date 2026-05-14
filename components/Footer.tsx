@@ -49,10 +49,11 @@ export default function Footer() {
             <Link href="/" className="flex items-center gap-2.5 mb-4">
               <div className="relative w-10 h-10 rounded-xl overflow-hidden flex-shrink-0 ring-2 ring-blue-500/40">
                 <Image
-                  src="/avatar.jpg"
+                  src="/avatar.png"
                   alt="Muhammad Ali Adil"
                   fill
-                  className="object-cover object-top scale-110"
+                  className="object-cover scale-110"
+                  style={{ objectPosition: "center 30%" }}
                 />
               </div>
               <span className="text-lg font-bold text-white font-heading">Muhammad Ali Adil</span>

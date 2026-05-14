@@ -50,10 +50,11 @@ export default function Navbar() {
             <Link href="/" className="flex items-center gap-2.5 group">
               <div className="relative w-9 h-9 rounded-xl overflow-hidden flex-shrink-0 ring-2 ring-blue-500/40 group-hover:ring-blue-500/70 transition-all duration-200">
                 <Image
-                  src="/avatar.jpg"
+                  src="/avatar.png"
                   alt="Muhammad Ali Adil"
                   fill
-                  className="object-cover object-top scale-110"
+                  className="object-cover scale-110"
+                  style={{ objectPosition: "center 30%" }}
                   priority
                 />
               </div>
