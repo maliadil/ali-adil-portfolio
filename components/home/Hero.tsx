@@ -174,11 +174,10 @@ export default function Hero() {
 
                   {/* The photo */}
                   <Image
-                    src="/avatar.png"
+                    src="/hero.png"
                     alt="Muhammad Ali Adil — SEO & AI Content Strategist"
                     fill
-                    className="object-cover scale-[1.08]"
-                    style={{ objectPosition: "center 22%" }}
+                    className="object-cover object-center scale-[1.04]"
                     priority
                   />
 
