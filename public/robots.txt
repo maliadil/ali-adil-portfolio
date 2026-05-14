@@ -1,4 +1,4 @@
 User-agent: *
 Disallow: 
 
-Sitemap: https://maliadil.com/sitemap.xml
+Sitemap: https://maliadil.site/sitemap.xml
