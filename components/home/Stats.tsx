@@ -66,7 +66,7 @@ export default function Stats() {
   const { ref, inView } = useInView({ triggerOnce: true, threshold: 0.2 });
 
   return (
-    <section className="py-24 relative overflow-hidden" ref={ref}>
+    <section className="py-14 relative overflow-hidden" ref={ref}>
       <div className="absolute inset-0 bg-gradient-to-b from-transparent via-blue-950/10 to-transparent" />
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">

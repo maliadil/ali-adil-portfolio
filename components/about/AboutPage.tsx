@@ -141,9 +141,9 @@ const values = [
 
 export default function AboutPage() {
   return (
-    <div className="pt-24 pb-20">
+    <div className="pt-24 pb-10">
       {/* Hero */}
-      <section className="py-20 relative overflow-hidden">
+      <section className="py-12 relative overflow-hidden">
         <div className="orb orb-blue w-[500px] h-[500px] -top-40 -right-40 opacity-20" />
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
@@ -298,7 +298,7 @@ export default function AboutPage() {
       </section>
 
       {/* Values */}
-      <section className="py-16 relative">
+      <section className="py-10 relative">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -333,7 +333,7 @@ export default function AboutPage() {
       </section>
 
       {/* Timeline */}
-      <section className="py-16 relative">
+      <section className="py-10 relative">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -409,7 +409,7 @@ export default function AboutPage() {
       </section>
 
       {/* Education */}
-      <section className="py-16 relative">
+      <section className="py-10 relative">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div
             initial={{ opacity: 0, y: 20 }}

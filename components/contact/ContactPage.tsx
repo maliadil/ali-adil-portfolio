@@ -38,9 +38,9 @@ const contactInfo = [
 
 export default function ContactPage() {
   return (
-    <div className="pt-24 pb-20">
+    <div className="pt-24 pb-10">
       {/* Header */}
-      <section className="py-16 relative overflow-hidden">
+      <section className="py-10 relative overflow-hidden">
         <div className="orb orb-blue w-[400px] h-[400px] -top-20 left-0 opacity-20" />
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 text-center">
           <motion.div initial={{ opacity: 0, y: 30 }} animate={{ opacity: 1, y: 0 }}>

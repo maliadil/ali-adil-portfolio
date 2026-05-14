@@ -64,9 +64,9 @@ const faqs = [
 
 export default function ServicesPage() {
   return (
-    <div className="pt-24 pb-20">
+    <div className="pt-24 pb-10">
       {/* Header */}
-      <section className="py-16 relative overflow-hidden">
+      <section className="py-10 relative overflow-hidden">
         <div className="orb orb-purple w-[500px] h-[500px] -top-40 right-0 opacity-20" />
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 text-center">
           <motion.div initial={{ opacity: 0, y: 30 }} animate={{ opacity: 1, y: 0 }}>
@@ -143,7 +143,7 @@ export default function ServicesPage() {
       </section>
 
       {/* Process */}
-      <section className="py-20 relative">
+      <section className="py-12 relative">
         <div className="absolute inset-0 bg-gradient-to-b from-transparent via-blue-950/10 to-transparent" />
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           <motion.div
@@ -185,7 +185,7 @@ export default function ServicesPage() {
       </section>
 
       {/* FAQs */}
-      <section className="py-16">
+      <section className="py-10">
         <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div
             initial={{ opacity: 0, y: 20 }}

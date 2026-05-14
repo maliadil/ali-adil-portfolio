@@ -17,7 +17,7 @@ export default function ServicesPreview() {
   const others = services.filter((s) => !s.highlight);
 
   return (
-    <section className="py-24 relative overflow-hidden">
+    <section className="py-14 relative overflow-hidden">
       <div className="absolute inset-0 bg-gradient-to-b from-transparent via-purple-950/10 to-transparent" />
       <div className="orb orb-purple w-[400px] h-[400px] top-1/2 right-0 opacity-20" />
 

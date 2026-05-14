@@ -40,9 +40,9 @@ export default function PortfolioPage() {
   });
 
   return (
-    <div className="pt-24 pb-20">
+    <div className="pt-24 pb-10">
       {/* Header */}
-      <section className="py-16 relative overflow-hidden">
+      <section className="py-10 relative overflow-hidden">
         <div className="orb orb-blue w-[500px] h-[500px] -top-40 left-1/2 -translate-x-1/2 opacity-15" />
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 text-center">
           <motion.div initial={{ opacity: 0, y: 30 }} animate={{ opacity: 1, y: 0 }}>
