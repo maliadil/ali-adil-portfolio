@@ -55,7 +55,7 @@ export default function CTASection() {
                   <ArrowRight className="w-4 h-4" />
                 </Link>
                 <a
-                  href="mailto:alifps2002@gmail.com"
+                  href="mailto:maliadilwork@gmail.com"
                   className="btn-secondary py-3.5 px-6 sm:py-4 sm:px-8 text-sm sm:text-base"
                 >
                   <Mail className="w-4 h-4" />

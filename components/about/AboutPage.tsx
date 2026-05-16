@@ -187,7 +187,7 @@ export default function AboutPage() {
                   LinkedIn
                   <ExternalLink className="w-3 h-3" />
                 </a>
-                <a href="mailto:alifps2002@gmail.com" className="btn-secondary py-3 px-6">
+                <a href="mailto:maliadilwork@gmail.com" className="btn-secondary py-3 px-6">
                   <Mail className="w-4 h-4" />
                   Email Me
                 </a>

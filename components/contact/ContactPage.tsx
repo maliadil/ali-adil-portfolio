@@ -9,8 +9,8 @@ const contactInfo = [
   {
     icon: Mail,
     label: "Email",
-    value: "alifps2002@gmail.com",
-    href: "mailto:alifps2002@gmail.com",
+    value: "maliadilwork@gmail.com",
+    href: "mailto:maliadilwork@gmail.com",
     color: "text-blue-400 bg-blue-400/10",
   },
   {
@@ -127,7 +127,7 @@ export default function ContactPage() {
             className="text-center"
           >
             <a
-              href="mailto:alifps2002@gmail.com"
+              href="mailto:maliadilwork@gmail.com"
               className="btn-primary py-4 px-10 text-base inline-flex"
             >
               <Mail className="w-5 h-5" />

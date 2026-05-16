@@ -30,7 +30,7 @@ const socialLinks = [
   },
   {
     label: "Email",
-    href: "mailto:alifps2002@gmail.com",
+    href: "mailto:maliadilwork@gmail.com",
     icon: Mail,
   },
 ];
@@ -80,7 +80,7 @@ export default function Footer() {
                 </a>
               ))}
               <a
-                href="mailto:alifps2002@gmail.com"
+                href="mailto:maliadilwork@gmail.com"
                 className="btn-primary py-2 px-4 text-xs"
               >
                 <Sparkles className="w-3 h-3" />
