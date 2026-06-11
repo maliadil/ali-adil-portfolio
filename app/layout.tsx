@@ -1,20 +1,31 @@
 import type { Metadata } from "next";
-import { Inter, Space_Grotesk } from "next/font/google";
+import { Fraunces, Newsreader, JetBrains_Mono } from "next/font/google";
 import "./globals.css";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import ScrollToTop from "@/components/ScrollToTop";
 import { Toaster } from "sonner";
 
-const inter = Inter({
+const fraunces = Fraunces({
   subsets: ["latin"],
-  variable: "--font-inter",
+  variable: "--font-fraunces",
   display: "swap",
+  style: ["normal", "italic"],
+  axes: ["opsz"],
 });
 
-const spaceGrotesk = Space_Grotesk({
+const newsreader = Newsreader({
   subsets: ["latin"],
-  variable: "--font-space-grotesk",
+  variable: "--font-newsreader",
+  display: "swap",
+  style: ["normal", "italic"],
+  axes: ["opsz"],
+  adjustFontFallback: false,
+});
+
+const jetbrainsMono = JetBrains_Mono({
+  subsets: ["latin"],
+  variable: "--font-jetbrains",
   display: "swap",
 });
 
@@ -75,20 +86,22 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className="dark scroll-smooth">
-      <body className={`${inter.variable} ${spaceGrotesk.variable} font-sans`}>
+    <html lang="en" className="scroll-smooth">
+      <body
+        className={`${fraunces.variable} ${newsreader.variable} ${jetbrainsMono.variable} font-body`}
+      >
         <Navbar />
         <main className="relative z-10">{children}</main>
         <Footer />
         <ScrollToTop />
         <Toaster
-          theme="dark"
           position="bottom-right"
           toastOptions={{
             style: {
-              background: "rgba(13,17,23,0.95)",
-              border: "1px solid rgba(255,255,255,0.08)",
-              color: "#F8FAFC",
+              background: "#FCFAF3",
+              border: "1px solid rgba(27,22,16,0.25)",
+              borderRadius: "0px",
+              color: "#1B1610",
             },
           }}
         />

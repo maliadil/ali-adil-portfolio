@@ -1,9 +1,7 @@
 "use client";
 
 import Link from "next/link";
-import { motion } from "framer-motion";
-import Image from "next/image";
-import { Mail, Linkedin, ArrowUpRight, Sparkles, MapPin } from "lucide-react";
+import { ArrowUpRight } from "lucide-react";
 
 const footerLinks = {
   Navigation: [
@@ -23,87 +21,58 @@ const footerLinks = {
 };
 
 const socialLinks = [
-  {
-    label: "LinkedIn",
-    href: "https://www.linkedin.com/in/maliadil",
-    icon: Linkedin,
-  },
-  {
-    label: "Email",
-    href: "mailto:maliadilwork@gmail.com",
-    icon: Mail,
-  },
+  { label: "LinkedIn", href: "https://www.linkedin.com/in/maliadil" },
+  { label: "Email", href: "mailto:maliadilwork@gmail.com" },
 ];
 
 export default function Footer() {
   return (
-    <footer className="relative border-t border-white/[0.06] overflow-hidden">
-      {/* Background glow */}
-      <div className="absolute bottom-0 left-1/2 -translate-x-1/2 w-[600px] h-[300px] bg-blue-600/10 rounded-full blur-[120px] pointer-events-none" />
-
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+    <footer className="border-t-2 border-ink bg-paper">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Top section */}
-        <div className="py-16 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12">
+        <div className="grid grid-cols-1 gap-12 py-16 md:grid-cols-2 lg:grid-cols-4">
           {/* Brand */}
           <div className="lg:col-span-2">
-            <Link href="/" className="flex items-center gap-2.5 mb-4">
-              <div className="relative w-10 h-10 rounded-xl overflow-hidden flex-shrink-0 ring-2 ring-blue-500/40">
-                <Image
-                  src="/avatar.png"
-                  alt="Muhammad Ali Adil"
-                  fill
-                  className="object-cover scale-110"
-                  style={{ objectPosition: "center 30%" }}
-                />
-              </div>
-              <span className="text-lg font-bold text-white font-heading">Muhammad Ali Adil</span>
+            <Link href="/" className="inline-block mb-5">
+              <span className="font-heading text-2xl font-black tracking-tight text-ink">
+                Muhammad Ali Adil<span className="text-vermillion">.</span>
+              </span>
             </Link>
-            <p className="text-white/50 text-sm leading-relaxed max-w-xs mb-6">
-              SEO & AI Content Strategist helping brands rank on Google and AI search platforms.
-              700+ articles published. 35+ brands scaled.
+            <p className="mb-6 max-w-sm text-[15px] leading-relaxed text-ink-soft">
+              SEO &amp; AI Content Strategist helping brands rank on Google and AI search
+              platforms. 700+ articles published. 35+ brands scaled.
             </p>
-            <div className="flex items-center gap-2 text-white/40 text-xs mb-4">
-              <MapPin className="w-3 h-3" />
-              <span>Karachi, Pakistan · Available Worldwide</span>
-            </div>
-            <div className="flex items-center gap-3">
+            <p className="fig-caption mb-6">
+              Karachi, Pakistan — Available Worldwide
+            </p>
+            <div className="flex flex-wrap items-center gap-5">
               {socialLinks.map((s) => (
                 <a
                   key={s.label}
                   href={s.href}
                   target={s.href.startsWith("http") ? "_blank" : undefined}
                   rel={s.href.startsWith("http") ? "noopener noreferrer" : undefined}
-                  className="w-9 h-9 rounded-lg glass-card flex items-center justify-center text-white/50 hover:text-white transition-colors"
-                  aria-label={s.label}
+                  className="link-underline"
                 >
-                  <s.icon className="w-4 h-4" />
+                  {s.label}
+                  <ArrowUpRight className="w-3 h-3" />
                 </a>
               ))}
-              <a
-                href="mailto:maliadilwork@gmail.com"
-                className="btn-primary py-2 px-4 text-xs"
-              >
-                <Sparkles className="w-3 h-3" />
-                Work Together
-              </a>
             </div>
           </div>
 
           {/* Links */}
           {Object.entries(footerLinks).map(([category, links]) => (
             <div key={category}>
-              <h3 className="text-xs font-semibold text-white/30 tracking-widest uppercase mb-4">
-                {category}
-              </h3>
-              <ul className="space-y-2">
+              <h3 className="eyebrow mb-5 !text-ink-faint">{category}</h3>
+              <ul className="space-y-3">
                 {links.map((link) => (
                   <li key={link.label}>
                     <Link
                       href={link.href}
-                      className="text-sm text-white/50 hover:text-white transition-colors duration-200 flex items-center gap-1 group"
+                      className="font-body text-[15px] text-ink-soft transition-colors duration-200 hover:text-vermillion"
                     >
                       {link.label}
-                      <ArrowUpRight className="w-3 h-3 opacity-0 group-hover:opacity-100 transition-opacity" />
                     </Link>
                   </li>
                 ))}
@@ -112,18 +81,14 @@ export default function Footer() {
           ))}
         </div>
 
-        {/* Bottom bar */}
-        <div className="py-6 border-t border-white/[0.05] flex flex-col sm:flex-row items-center justify-between gap-4">
-          <p className="text-white/30 text-xs">
-            © {new Date().getFullYear()} Muhammad Ali Adil. All rights reserved.
+        {/* Colophon */}
+        <div className="flex flex-col items-center justify-between gap-3 border-t border-ink/15 py-6 sm:flex-row">
+          <p className="font-mono text-[10px] uppercase tracking-[0.16em] text-ink-faint">
+            © {new Date().getFullYear()} Muhammad Ali Adil — All rights reserved
           </p>
-          <div className="flex items-center gap-4">
-            <span className="text-white/30 text-xs">
-              SEO & AI Content Strategist
-            </span>
-            <span className="w-1 h-1 rounded-full bg-white/20" />
-            <span className="text-white/30 text-xs">Karachi, Pakistan</span>
-          </div>
+          <p className="font-mono text-[10px] uppercase tracking-[0.16em] text-ink-faint">
+            Set in Fraunces &amp; Newsreader · Karachi, PK
+          </p>
         </div>
       </div>
     </footer>

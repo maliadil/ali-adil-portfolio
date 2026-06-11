@@ -2,15 +2,8 @@
 
 import { motion } from "framer-motion";
 import Link from "next/link";
-import {
-  TrendingUp, Brain, LayoutDashboard, PenLine, Settings2,
-  Search, BarChart3, Users, CheckCircle2, ArrowRight, Sparkles
-} from "lucide-react";
+import { ArrowRight } from "lucide-react";
 import { services } from "@/data/services";
-
-const iconMap: Record<string, React.ComponentType<{ className?: string }>> = {
-  TrendingUp, Brain, LayoutDashboard, PenLine, Settings2, Search, BarChart3, Users,
-};
 
 const process = [
   {
@@ -64,17 +57,30 @@ const faqs = [
 
 export default function ServicesPage() {
   return (
-    <div className="pt-24 pb-10">
+    <div className="pt-20 sm:pt-24">
       {/* Header */}
-      <section className="py-10 relative overflow-hidden">
-        <div className="orb orb-purple w-[500px] h-[500px] -top-40 right-0 opacity-20" />
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 text-center">
-          <motion.div initial={{ opacity: 0, y: 30 }} animate={{ opacity: 1, y: 0 }}>
-            <span className="section-label mb-5 inline-flex">What I Offer</span>
-            <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold font-heading text-white mt-5 mb-5">
-              Services Built for <span className="gradient-text">Organic Growth</span>
+      <section className="pb-12">
+        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+          <motion.div
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ duration: 0.5 }}
+            className="rule-thick pt-4 pb-10"
+          >
+            <span className="eyebrow">Services — The Offer</span>
+          </motion.div>
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.7, ease: [0.22, 1, 0.36, 1] }}
+          >
+            <h1
+              className="font-heading font-black leading-[0.95] tracking-tight text-ink"
+              style={{ fontSize: "clamp(2.6rem, 6vw, 5rem)" }}
+            >
+              Built for <span className="italic font-light text-vermillion">organic growth</span>
             </h1>
-            <p className="text-white/55 text-lg max-w-2xl mx-auto">
+            <p className="mt-6 max-w-2xl text-lg leading-relaxed text-ink-soft">
               From first-page Google rankings to AI search visibility — strategic, data-driven
               services for brands that want to grow without relying on paid ads.
             </p>
@@ -82,102 +88,88 @@ export default function ServicesPage() {
         </div>
       </section>
 
-      {/* Services grid */}
-      <section className="py-10">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-            {services.map((service, i) => {
-              const Icon = iconMap[service.icon] || TrendingUp;
-              return (
-                <motion.div
-                  key={service.id}
-                  initial={{ opacity: 0, y: 30 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  viewport={{ once: true }}
-                  transition={{ delay: i * 0.08 }}
-                  className={`group ${service.highlight ? "md:col-span-1" : ""}`}
-                >
-                  <div
-                    className={`glass-card-hover p-7 h-full flex flex-col relative overflow-hidden ${
-                      service.highlight
-                        ? "border-white/[0.1]"
-                        : ""
-                    }`}
-                  >
-                    {service.highlight && (
-                      <>
-                        <div className={`absolute top-0 left-0 right-0 h-px bg-gradient-to-r ${service.gradient}`} />
-                        <span className="absolute top-3 right-3 text-[10px] px-2 py-0.5 rounded-full bg-blue-500/20 text-blue-400 border border-blue-500/20 font-semibold">
-                          Popular
-                        </span>
-                      </>
-                    )}
+      {/* Services ledger */}
+      <section className="pb-16 sm:pb-24">
+        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+          <div className="border-t border-ink/15">
+            {services.map((service, i) => (
+              <motion.article
+                key={service.id}
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ delay: Math.min(i * 0.05, 0.3) }}
+                className="group grid grid-cols-12 gap-4 border-b border-ink/15 py-10 transition-colors duration-300 hover:bg-paper-deep/60 sm:gap-6"
+              >
+                {/* Number */}
+                <div className="col-span-2 sm:col-span-1">
+                  <span className="font-heading text-2xl font-light italic text-ink-faint transition-colors group-hover:text-vermillion sm:text-3xl">
+                    {String(i + 1).padStart(2, "0")}
+                  </span>
+                </div>
 
-                    <div className={`w-14 h-14 rounded-2xl bg-gradient-to-br ${service.gradient} p-px mb-5`}>
-                      <div className="w-full h-full rounded-2xl bg-[#0D1117] flex items-center justify-center">
-                        <Icon className="w-6 h-6 text-white" />
-                      </div>
-                    </div>
+                {/* Title */}
+                <div className="col-span-10 sm:col-span-4">
+                  <h3 className="font-heading text-2xl font-bold tracking-tight text-ink transition-colors group-hover:text-vermillion sm:text-3xl">
+                    {service.title}
+                  </h3>
+                  {service.highlight && (
+                    <span className="ai-badge mt-3 inline-flex">Most requested</span>
+                  )}
+                </div>
 
-                    <h3 className="text-xl font-bold text-white font-heading mb-3">
-                      {service.title}
-                    </h3>
-                    <p className="text-white/55 text-sm leading-relaxed mb-5 flex-1">
-                      {service.description}
-                    </p>
-
-                    <ul className="space-y-2.5">
-                      {service.features.map((f) => (
-                        <li key={f} className="flex items-center gap-2">
-                          <CheckCircle2 className="w-4 h-4 text-green-400 flex-shrink-0" />
-                          <span className="text-sm text-white/60">{f}</span>
-                        </li>
-                      ))}
-                    </ul>
-                  </div>
-                </motion.div>
-              );
-            })}
+                {/* Description + features */}
+                <div className="col-span-12 sm:col-span-7 sm:col-start-6 lg:col-span-6">
+                  <p className="text-[15px] leading-relaxed text-ink-soft">
+                    {service.description}
+                  </p>
+                  <ul className="mt-5 grid grid-cols-1 gap-x-8 gap-y-1.5 sm:grid-cols-2">
+                    {service.features.map((f) => (
+                      <li key={f} className="flex items-start gap-2.5 text-sm text-ink-soft">
+                        <span className="mt-[8px] h-px w-4 flex-shrink-0 bg-vermillion" />
+                        {f}
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+              </motion.article>
+            ))}
           </div>
         </div>
       </section>
 
       {/* Process */}
-      <section className="py-12 relative">
-        <div className="absolute inset-0 bg-gradient-to-b from-transparent via-blue-950/10 to-transparent" />
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+      <section className="pb-16 sm:pb-24">
+        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            className="text-center mb-14"
+            className="rule-thick mb-12 pt-4"
           >
-            <span className="section-label mb-4 inline-flex">My Process</span>
-            <h2 className="text-4xl font-bold font-heading text-white mt-4">
-              How We <span className="gradient-text">Work Together</span>
+            <span className="eyebrow">The Method</span>
+            <h2 className="mt-3 font-heading text-4xl font-black tracking-tight text-ink sm:text-5xl">
+              How we <span className="italic font-light text-vermillion">work together</span>
             </h2>
           </motion.div>
 
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+          <div className="grid grid-cols-1 gap-px border border-ink/15 bg-ink/15 sm:grid-cols-2 lg:grid-cols-4">
             {process.map((step, i) => (
               <motion.div
                 key={step.step}
-                initial={{ opacity: 0, y: 20 }}
+                initial={{ opacity: 0, y: 16 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
-                transition={{ delay: i * 0.1 }}
+                transition={{ delay: i * 0.08 }}
+                className="bg-paper-card p-7 transition-colors duration-300 hover:bg-paper-deep sm:p-8"
               >
-                <div className="glass-card-hover p-6 h-full relative">
-                  {/* Connector line */}
-                  {i < process.length - 1 && (
-                    <div className="absolute top-8 -right-3 w-6 h-px bg-gradient-to-r from-white/10 to-transparent hidden lg:block" />
-                  )}
-                  <span className="text-4xl font-bold font-heading text-white/10 mb-4 block">
-                    {step.step}
-                  </span>
-                  <h3 className="text-lg font-bold text-white font-heading mb-3">{step.title}</h3>
-                  <p className="text-sm text-white/50 leading-relaxed">{step.description}</p>
-                </div>
+                <span className="font-heading text-6xl font-black leading-none text-ink/10">
+                  {step.step}
+                </span>
+                <h3 className="mt-5 font-heading text-xl font-bold tracking-tight text-ink">
+                  {step.title}
+                </h3>
+                <p className="mt-3 text-sm leading-relaxed text-ink-soft">{step.description}</p>
               </motion.div>
             ))}
           </div>
@@ -185,58 +177,66 @@ export default function ServicesPage() {
       </section>
 
       {/* FAQs */}
-      <section className="py-10">
-        <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
+      <section className="pb-16 sm:pb-24">
+        <div className="mx-auto max-w-4xl px-4 sm:px-6 lg:px-8">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            className="text-center mb-12"
+            className="rule-thick mb-6 pt-4"
           >
-            <span className="section-label mb-4 inline-flex">FAQ</span>
-            <h2 className="text-3xl font-bold font-heading text-white mt-4">
-              Frequently Asked <span className="gradient-text">Questions</span>
+            <span className="eyebrow">Questions &amp; Answers</span>
+            <h2 className="mt-3 font-heading text-4xl font-black tracking-tight text-ink sm:text-5xl">
+              Frequently <span className="italic font-light text-vermillion">asked</span>
             </h2>
           </motion.div>
 
-          <div className="space-y-4">
+          <div>
             {faqs.map((faq, i) => (
               <motion.div
                 key={i}
-                initial={{ opacity: 0, y: 10 }}
+                initial={{ opacity: 0, y: 12 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
-                transition={{ delay: i * 0.07 }}
-                className="glass-card p-6"
+                transition={{ delay: i * 0.05 }}
+                className="grid grid-cols-12 gap-3 border-b border-ink/15 py-7 sm:gap-6"
               >
-                <h3 className="text-white font-semibold mb-2">{faq.q}</h3>
-                <p className="text-white/55 text-sm leading-relaxed">{faq.a}</p>
+                <div className="col-span-12 sm:col-span-1">
+                  <span className="font-mono text-[10px] text-vermillion">
+                    Q{i + 1}
+                  </span>
+                </div>
+                <div className="col-span-12 sm:col-span-11">
+                  <h3 className="font-heading text-xl font-bold tracking-tight text-ink">
+                    {faq.q}
+                  </h3>
+                  <p className="mt-3 max-w-3xl text-[15px] leading-relaxed text-ink-soft">
+                    {faq.a}
+                  </p>
+                </div>
               </motion.div>
             ))}
           </div>
         </div>
       </section>
 
-      {/* CTA */}
-      <section className="py-10">
-        <div className="max-w-3xl mx-auto px-4 text-center">
+      {/* CTA band */}
+      <section className="border-t-2 border-ink bg-ink py-20 sm:py-24">
+        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            className="glass-card p-10 border border-blue-500/20 relative overflow-hidden"
           >
-            <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-blue-500 to-transparent" />
-            <Sparkles className="w-10 h-10 text-blue-400 mx-auto mb-4" />
-            <h2 className="text-3xl font-bold font-heading text-white mb-4">
-              Ready to Grow Organically?
+            <h2 className="font-heading text-4xl font-black tracking-tight text-paper sm:text-5xl">
+              Ready to grow <span className="italic font-light text-vermillion-bright">organically?</span>
             </h2>
-            <p className="text-white/50 mb-6 text-sm">
-              Let&apos;s discuss your goals and build a custom strategy to rank your brand on Google
-              and AI search.
+            <p className="mt-5 max-w-xl text-lg leading-relaxed text-paper/65">
+              Let&apos;s discuss your goals and build a custom strategy to rank your brand on
+              Google and AI search.
             </p>
-            <Link href="/contact" className="btn-primary py-3.5 px-8 inline-flex">
-              Get a Free Consultation
+            <Link href="/contact" className="btn-primary-inverse mt-9 inline-flex w-full sm:w-auto">
+              Get a free consultation
               <ArrowRight className="w-4 h-4" />
             </Link>
           </motion.div>

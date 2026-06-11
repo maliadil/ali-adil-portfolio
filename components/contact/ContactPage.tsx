@@ -1,143 +1,157 @@
 "use client";
 
 import { motion } from "framer-motion";
-import {
-  Mail, Linkedin, MapPin, Clock, CheckCircle2, Sparkles, ArrowRight,
-} from "lucide-react";
+import { ArrowRight, ArrowUpRight } from "lucide-react";
 
 const contactInfo = [
   {
-    icon: Mail,
     label: "Email",
     value: "maliadilwork@gmail.com",
     href: "mailto:maliadilwork@gmail.com",
-    color: "text-blue-400 bg-blue-400/10",
   },
   {
-    icon: Linkedin,
     label: "LinkedIn",
     value: "/in/maliadil",
     href: "https://www.linkedin.com/in/maliadil",
-    color: "text-blue-500 bg-blue-500/10",
   },
   {
-    icon: MapPin,
     label: "Location",
     value: "Karachi, Pakistan",
     href: null,
-    color: "text-green-400 bg-green-400/10",
   },
   {
-    icon: Clock,
     label: "Response Time",
     value: "Within 24 hours",
     href: null,
-    color: "text-yellow-400 bg-yellow-400/10",
   },
+];
+
+const helpItems = [
+  "First-page Google rankings",
+  "AI search visibility (ChatGPT, Perplexity)",
+  "Content strategy & execution",
+  "Multi-brand content management",
+  "SEO audits & optimization",
+  "Organic traffic growth",
 ];
 
 export default function ContactPage() {
   return (
-    <div className="pt-24 pb-10">
+    <div className="pt-20 sm:pt-24">
       {/* Header */}
-      <section className="py-10 relative overflow-hidden">
-        <div className="orb orb-blue w-[400px] h-[400px] -top-20 left-0 opacity-20" />
-        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 text-center">
-          <motion.div initial={{ opacity: 0, y: 30 }} animate={{ opacity: 1, y: 0 }}>
-            <span className="section-label mb-5 inline-flex">Get In Touch</span>
-            <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold font-heading text-white mt-5 mb-5">
-              Let&apos;s Build Something <span className="gradient-text">That Ranks</span>
+      <section className="pb-14">
+        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+          <motion.div
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ duration: 0.5 }}
+            className="rule-thick pt-4 pb-10"
+          >
+            <span className="eyebrow">Contact — The Correspondence</span>
+          </motion.div>
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.7, ease: [0.22, 1, 0.36, 1] }}
+          >
+            <h1
+              className="font-heading font-black leading-[0.95] tracking-tight text-ink"
+              style={{ fontSize: "clamp(2.6rem, 6.5vw, 5.5rem)" }}
+            >
+              Let&apos;s build something
+              <br />
+              that <span className="italic font-light text-vermillion">ranks</span>
+              <span className="text-vermillion">.</span>
             </h1>
-            <p className="text-white/55 text-lg max-w-xl mx-auto">
-              Ready to rank on Google and AI search? Reach out and let&apos;s build a
-              strategy together.
+            <p className="mt-6 max-w-xl text-lg leading-relaxed text-ink-soft">
+              Ready to rank on Google and AI search? Reach out and let&apos;s build a strategy
+              together.
             </p>
           </motion.div>
         </div>
       </section>
 
-      {/* Contact cards */}
-      <section className="py-6">
-        <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-8">
-            {contactInfo.map((info, i) => (
-              <motion.div
-                key={info.label}
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ delay: i * 0.08 }}
-              >
-                <div className="glass-card-hover p-5 flex items-center gap-4 h-full">
-                  <div className={`w-12 h-12 rounded-xl flex items-center justify-center flex-shrink-0 ${info.color}`}>
-                    <info.icon className="w-5 h-5" />
-                  </div>
-                  <div>
-                    <p className="text-xs text-white/30 mb-0.5">{info.label}</p>
-                    {info.href ? (
-                      <a
-                        href={info.href}
-                        target={info.href.startsWith("http") ? "_blank" : undefined}
-                        rel={info.href.startsWith("http") ? "noopener noreferrer" : undefined}
-                        className="text-sm font-medium text-white hover:text-blue-400 transition-colors"
-                      >
-                        {info.value}
-                      </a>
-                    ) : (
-                      <p className="text-sm font-medium text-white">{info.value}</p>
-                    )}
-                  </div>
-                </div>
-              </motion.div>
-            ))}
-          </div>
-
-          {/* What I can help with */}
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0.35 }}
-            className="glass-card p-6 mb-8"
-          >
-            <h3 className="text-sm font-bold text-white mb-4 flex items-center gap-2">
-              <Sparkles className="w-4 h-4 text-blue-400" />
-              What I Can Help With
-            </h3>
-            <div className="grid grid-cols-1 sm:grid-cols-2 gap-2">
-              {[
-                "First-page Google rankings",
-                "AI search visibility (ChatGPT, Perplexity)",
-                "Content strategy & execution",
-                "Multi-brand content management",
-                "SEO audits & optimization",
-                "Organic traffic growth",
-              ].map((item) => (
-                <div key={item} className="flex items-center gap-2 text-sm text-white/55">
-                  <CheckCircle2 className="w-3.5 h-3.5 text-green-400 flex-shrink-0" />
-                  {item}
-                </div>
-              ))}
-            </div>
-          </motion.div>
-
-          {/* Email CTA */}
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0.45 }}
-            className="text-center"
-          >
-            <a
-              href="mailto:maliadilwork@gmail.com"
-              className="btn-primary py-4 px-10 text-base inline-flex"
+      <section className="pb-20 sm:pb-28">
+        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+          <div className="grid grid-cols-1 gap-14 lg:grid-cols-12 lg:gap-16">
+            {/* Contact ledger */}
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ delay: 0.15 }}
+              className="lg:col-span-7"
             >
-              <Mail className="w-5 h-5" />
-              Send Me an Email
-              <ArrowRight className="w-4 h-4" />
-            </a>
-            <p className="text-white/30 text-xs mt-4">
-              Typically responds within 24 hours · Available for freelance &amp; full-time
-            </p>
-          </motion.div>
+              <div className="border-t border-ink/15">
+                {contactInfo.map((info) => (
+                  <div
+                    key={info.label}
+                    className="grid grid-cols-12 items-baseline gap-4 border-b border-ink/15 py-6"
+                  >
+                    <div className="col-span-12 sm:col-span-4">
+                      <span className="font-mono text-[11px] uppercase tracking-[0.18em] text-ink-faint">
+                        {info.label}
+                      </span>
+                    </div>
+                    <div className="col-span-12 sm:col-span-8">
+                      {info.href ? (
+                        <a
+                          href={info.href}
+                          target={info.href.startsWith("http") ? "_blank" : undefined}
+                          rel={info.href.startsWith("http") ? "noopener noreferrer" : undefined}
+                          className="group inline-flex items-center gap-2 font-heading text-xl font-bold tracking-tight text-ink transition-colors hover:text-vermillion sm:text-2xl"
+                        >
+                          {info.value}
+                          <ArrowUpRight className="h-4 w-4 text-ink-faint transition-all group-hover:-translate-y-0.5 group-hover:translate-x-0.5 group-hover:text-vermillion" />
+                        </a>
+                      ) : (
+                        <p className="font-heading text-xl font-bold tracking-tight text-ink sm:text-2xl">
+                          {info.value}
+                        </p>
+                      )}
+                    </div>
+                  </div>
+                ))}
+              </div>
+
+              {/* Email CTA */}
+              <motion.div
+                initial={{ opacity: 0, y: 16 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ delay: 0.4 }}
+                className="mt-10"
+              >
+                <a href="mailto:maliadilwork@gmail.com" className="btn-primary w-full sm:w-auto">
+                  Send me an email
+                  <ArrowRight className="w-4 h-4" />
+                </a>
+                <p className="fig-caption mt-5">
+                  Typically responds within 24 hours · Available for freelance &amp; full-time
+                </p>
+              </motion.div>
+            </motion.div>
+
+            {/* What I can help with */}
+            <motion.aside
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ delay: 0.3 }}
+              className="lg:col-span-5"
+            >
+              <div className="border border-ink bg-paper-card p-8 shadow-print sm:p-9">
+                <p className="eyebrow mb-6">What I can help with</p>
+                <ul className="space-y-4">
+                  {helpItems.map((item, i) => (
+                    <li key={item} className="flex items-baseline gap-4 text-[15px] text-ink">
+                      <span className="font-mono text-[10px] text-vermillion">
+                        {String(i + 1).padStart(2, "0")}
+                      </span>
+                      {item}
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            </motion.aside>
+          </div>
         </div>
       </section>
     </div>

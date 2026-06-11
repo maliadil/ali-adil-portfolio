@@ -2,129 +2,100 @@
 
 import { motion } from "framer-motion";
 import Link from "next/link";
-import { ArrowRight, ExternalLink, TrendingUp, Brain } from "lucide-react";
+import { ArrowRight, ArrowUpRight } from "lucide-react";
 import { featuredBrands } from "@/data/brands";
-
-const industryColors: Record<string, string> = {
-  Healthcare: "bg-emerald-400/10 text-emerald-400 border-emerald-400/20",
-  Legal: "bg-red-400/10 text-red-400 border-red-400/20",
-  Finance: "bg-yellow-400/10 text-yellow-400 border-yellow-400/20",
-  Construction: "bg-orange-400/10 text-orange-400 border-orange-400/20",
-  Marketing: "bg-blue-400/10 text-blue-400 border-blue-400/20",
-  Sports: "bg-green-400/10 text-green-400 border-green-400/20",
-  "Sports & Media": "bg-green-400/10 text-green-400 border-green-400/20",
-};
 
 export default function FeaturedWork() {
   return (
-    <section className="py-14 relative">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <section className="py-9 sm:py-12">
+      <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         {/* Header */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          className="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-10 md:mb-14"
+          className="rule-thick mb-4 flex flex-col gap-6 pt-4 md:flex-row md:items-end md:justify-between"
         >
           <div>
-            <span className="section-label mb-4 inline-flex">Featured Work</span>
-            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold font-heading text-white mt-4">
-              Case Studies &amp; <span className="gradient-text">SEO Wins</span>
+            <span className="eyebrow">03 — Featured Work</span>
+            <h2 className="mt-3 font-heading text-4xl font-black tracking-tight text-ink sm:text-5xl">
+              Case studies &amp; <span className="italic font-light text-vermillion">SEO wins</span>
             </h2>
-            <p className="text-white/50 mt-3 max-w-lg">
-              A selection of brands I&apos;ve helped rank on Google&apos;s first page through
-              strategic SEO content and AI-optimized writing.
+            <p className="mt-4 max-w-lg text-[15px] leading-relaxed text-ink-soft">
+              A selection of brands ranked on Google&apos;s first page through strategic SEO
+              content and AI-optimized writing.
             </p>
           </div>
-          <Link
-            href="/portfolio"
-            className="btn-secondary whitespace-nowrap self-start md:self-auto"
-          >
-            View All Work
-            <ArrowRight className="w-4 h-4" />
+          <Link href="/portfolio" className="link-underline self-start whitespace-nowrap md:self-auto">
+            View all work
+            <ArrowRight className="w-3.5 h-3.5" />
           </Link>
         </motion.div>
 
-        {/* Cards grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-          {featuredBrands.map((brand, i) => {
-            const colorClass =
-              industryColors[brand.industry] ||
-              "bg-blue-400/10 text-blue-400 border-blue-400/20";
-            return (
-              <motion.div
-                key={brand.id}
-                initial={{ opacity: 0, y: 30 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.5, delay: i * 0.1 }}
-                className="group"
-              >
-                <div className="glass-card-hover p-5 sm:p-6 h-full flex flex-col">
-                  {/* Header */}
-                  <div className="flex items-start justify-between mb-4">
-                    <div>
-                      <div className="flex items-center gap-2 mb-2">
-                        <span
-                          className={`text-xs font-semibold px-2.5 py-1 rounded-full border ${colorClass}`}
-                        >
-                          {brand.industry}
-                        </span>
-                      </div>
-                      <h3 className="text-lg font-bold text-white font-heading group-hover:text-blue-400 transition-colors">
-                        {brand.name}
-                      </h3>
-                      <a
-                        href={`https://${brand.url}`}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="flex items-center gap-1 text-xs text-white/40 hover:text-white/70 transition-colors mt-0.5"
-                      >
-                        {brand.url}
-                        <ExternalLink className="w-2.5 h-2.5" />
-                      </a>
-                    </div>
-                  </div>
+        {/* Editorial index rows */}
+        <div>
+          {featuredBrands.map((brand, i) => (
+            <motion.div
+              key={brand.id}
+              initial={{ opacity: 0, y: 24 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.5, delay: i * 0.06 }}
+            >
+              <div className="group grid grid-cols-12 items-start gap-4 border-b border-ink/15 py-8 transition-colors duration-300 hover:bg-paper-deep/60 sm:gap-6 lg:py-10">
+                {/* Index number */}
+                <div className="col-span-2 sm:col-span-1">
+                  <span className="font-heading text-2xl font-light italic text-ink-faint transition-colors group-hover:text-vermillion sm:text-3xl">
+                    {String(i + 1).padStart(2, "0")}
+                  </span>
+                </div>
 
-                  {/* Role */}
-                  <p className="text-xs text-white/40 mb-3 font-medium uppercase tracking-wider">
-                    {brand.role}
+                {/* Title + meta */}
+                <div className="col-span-10 sm:col-span-4">
+                  <h3 className="font-heading text-2xl font-bold tracking-tight text-ink transition-colors group-hover:text-vermillion sm:text-3xl">
+                    {brand.name}
+                  </h3>
+                  <p className="mt-2 font-mono text-[10px] uppercase tracking-[0.18em] text-ink-faint">
+                    {brand.industry} · {brand.role}
                   </p>
+                  <a
+                    href={`https://${brand.url}`}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="mt-2 inline-flex items-center gap-1 font-mono text-[11px] text-ink-soft underline decoration-ink/30 underline-offset-4 transition-colors hover:text-vermillion hover:decoration-vermillion"
+                  >
+                    {brand.url}
+                    <ArrowUpRight className="h-3 w-3" />
+                  </a>
+                </div>
 
-                  {/* Description */}
-                  <p className="text-sm text-white/60 leading-relaxed mb-5 flex-1">
+                {/* Description + achievements */}
+                <div className="col-span-12 sm:col-span-6 sm:col-start-6 lg:col-span-5">
+                  <p className="text-[15px] leading-relaxed text-ink-soft">
                     {brand.description}
                   </p>
-
-                  {/* Achievements */}
-                  <div className="space-y-2 mb-5">
+                  <ul className="mt-4 space-y-1.5">
                     {brand.achievements.slice(0, 2).map((achievement, ai) => (
-                      <div key={ai} className="flex items-start gap-2">
-                        <TrendingUp className="w-3 h-3 text-green-400 flex-shrink-0 mt-0.5" />
-                        <span className="text-xs text-white/50">{achievement}</span>
-                      </div>
-                    ))}
-                  </div>
-
-                  {/* Tags */}
-                  <div className="flex flex-wrap gap-1.5 pt-4 border-t border-white/[0.06]">
-                    {brand.tags.map((tag) => (
-                      <span
-                        key={tag}
-                        className="text-[10px] px-2 py-0.5 rounded-full bg-white/[0.05] text-white/40 border border-white/[0.06]"
+                      <li
+                        key={ai}
+                        className="flex items-start gap-2.5 text-sm leading-snug text-ink-soft"
                       >
-                        {tag}
-                      </span>
+                        <span className="mt-[7px] h-px w-4 flex-shrink-0 bg-vermillion" />
+                        {achievement}
+                      </li>
                     ))}
-                    <span className="ai-badge ml-auto">
-                      <Brain className="w-2.5 h-2.5" />
-                      AI Optimized
-                    </span>
-                  </div>
+                  </ul>
                 </div>
-              </motion.div>
-            );
-          })}
+
+                {/* Arrow */}
+                <div className="hidden lg:col-span-1 lg:flex lg:justify-end">
+                  <span className="flex h-11 w-11 items-center justify-center border border-ink/20 text-ink transition-all duration-300 group-hover:border-vermillion group-hover:bg-vermillion group-hover:text-paper">
+                    <ArrowUpRight className="h-4 w-4" />
+                  </span>
+                </div>
+              </div>
+            </motion.div>
+          ))}
         </div>
       </div>
     </section>

@@ -3,7 +3,6 @@
 import { useInView } from "react-intersection-observer";
 import CountUp from "react-countup";
 import { motion } from "framer-motion";
-import { TrendingUp, Users, FileText, Trophy, Cpu, Globe } from "lucide-react";
 
 const stats = [
   {
@@ -11,54 +10,36 @@ const stats = [
     suffix: "+",
     label: "Articles Published",
     description: "SEO-optimized content across diverse industries",
-    icon: FileText,
-    color: "text-blue-400",
-    bg: "bg-blue-400/10",
   },
   {
     value: 35,
     suffix: "+",
     label: "Brands Scaled",
     description: "Multi-brand content operations managed",
-    icon: Users,
-    color: "text-purple-400",
-    bg: "bg-purple-400/10",
   },
   {
     value: 12,
     suffix: "+",
     label: "Industries Covered",
     description: "From healthcare to finance and beyond",
-    icon: Globe,
-    color: "text-cyan-400",
-    bg: "bg-cyan-400/10",
   },
   {
     value: 5,
     suffix: "+",
     label: "Years Experience",
     description: "In SEO, content marketing, and digital growth",
-    icon: Trophy,
-    color: "text-yellow-400",
-    bg: "bg-yellow-400/10",
   },
   {
     value: 100,
     suffix: "+",
     label: "Top 10 Rankings",
     description: "Articles ranked on Google's first page",
-    icon: TrendingUp,
-    color: "text-green-400",
-    bg: "bg-green-400/10",
   },
   {
     value: 50,
     suffix: "+",
     label: "#1 Positions",
     description: "Keywords ranked in the #1 spot",
-    icon: Cpu,
-    color: "text-rose-400",
-    bg: "bg-rose-400/10",
   },
 ];
 
@@ -66,64 +47,57 @@ export default function Stats() {
   const { ref, inView } = useInView({ triggerOnce: true, threshold: 0.2 });
 
   return (
-    <section className="py-14 relative overflow-hidden" ref={ref}>
-      <div className="absolute inset-0 bg-gradient-to-b from-transparent via-blue-950/10 to-transparent" />
-
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-        {/* Header */}
+    <section className="py-9 sm:py-12" ref={ref}>
+      <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+        {/* Section header */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.5 }}
-          className="text-center mb-10 md:mb-14"
+          className="rule-thick mb-8 flex flex-col gap-4 pt-4 sm:flex-row sm:items-end sm:justify-between"
         >
-          <span className="section-label mb-4 inline-flex">By The Numbers</span>
-          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold font-heading text-white mt-4">
-            Results That{" "}
-            <span className="gradient-text">Speak Louder</span>
-          </h2>
-          <p className="text-white/50 mt-4 max-w-xl mx-auto">
-            Every metric represents real brands, real content, and real organic growth delivered.
+          <div>
+            <span className="eyebrow">01 — By the Numbers</span>
+            <h2 className="mt-3 font-heading text-4xl font-black tracking-tight text-ink sm:text-5xl">
+              Results that <span className="italic font-light text-vermillion">speak</span>
+            </h2>
+          </div>
+          <p className="max-w-xs text-[15px] leading-relaxed text-ink-soft">
+            Every metric represents real brands, real content, and real organic growth
+            delivered.
           </p>
         </motion.div>
 
-        {/* Stats grid */}
-        <div className="grid grid-cols-2 md:grid-cols-3 gap-4 lg:gap-6">
+        {/* Ledger grid */}
+        <div className="grid grid-cols-1 border-t border-ink/15 sm:grid-cols-2 lg:grid-cols-3">
           {stats.map((stat, i) => (
             <motion.div
               key={stat.label}
-              initial={{ opacity: 0, y: 30 }}
+              initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              transition={{ duration: 0.5, delay: i * 0.08 }}
+              transition={{ duration: 0.5, delay: i * 0.07 }}
+              className="group border-b border-ink/15 px-1 py-8 sm:px-6 lg:[&:nth-child(3n+1)]:pl-1 lg:[&:not(:nth-child(3n+1))]:border-l"
             >
-              <div className="glass-card-hover p-5 sm:p-6 lg:p-8 h-full group">
-                <div
-                  className={`w-10 h-10 sm:w-12 sm:h-12 rounded-xl ${stat.bg} flex items-center justify-center mb-3 sm:mb-4 group-hover:scale-110 transition-transform duration-300`}
-                >
-                  <stat.icon className={`w-5 h-5 sm:w-6 sm:h-6 ${stat.color}`} />
-                </div>
-                <div className="flex items-end gap-1 mb-2">
-                  <span className={`text-3xl sm:text-4xl lg:text-5xl font-bold font-heading ${stat.color}`}>
-                    {inView ? (
-                      <CountUp
-                        end={stat.value}
-                        duration={2.5}
-                        separator=","
-                        enableScrollSpy={false}
-                      />
-                    ) : (
-                      "0"
-                    )}
-                  </span>
-                  <span className={`text-2xl font-bold font-heading pb-1 ${stat.color}`}>
-                    {stat.suffix}
-                  </span>
-                </div>
-                <p className="text-white font-semibold text-sm mb-1">{stat.label}</p>
-                <p className="text-white/40 text-xs leading-relaxed">{stat.description}</p>
+              <div className="flex items-baseline gap-1">
+                <span className="font-heading text-5xl font-black tracking-tight text-ink transition-colors duration-300 group-hover:text-vermillion sm:text-6xl">
+                  {inView ? (
+                    <CountUp end={stat.value} duration={2.2} separator="," enableScrollSpy={false} />
+                  ) : (
+                    "0"
+                  )}
+                </span>
+                <span className="font-heading text-3xl font-bold text-vermillion">
+                  {stat.suffix}
+                </span>
               </div>
+              <p className="mt-3 font-mono text-[11px] uppercase tracking-[0.18em] text-ink">
+                {stat.label}
+              </p>
+              <p className="mt-1.5 text-sm leading-relaxed text-ink-faint">
+                {stat.description}
+              </p>
             </motion.div>
           ))}
         </div>

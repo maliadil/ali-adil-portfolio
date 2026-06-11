@@ -22,31 +22,15 @@ export default function ScrollToTop() {
       {visible && (
         <motion.button
           key="scroll-to-top"
-          initial={{ opacity: 0, x: -20, scale: 0.8 }}
-          animate={{ opacity: 1, x: 0, scale: 1 }}
-          exit={{ opacity: 0, x: -20, scale: 0.8 }}
+          initial={{ opacity: 0, y: 12 }}
+          animate={{ opacity: 1, y: 0 }}
+          exit={{ opacity: 0, y: 12 }}
           transition={{ duration: 0.25, ease: "easeOut" }}
           onClick={scrollUp}
           aria-label="Scroll to top"
-          className="fixed left-5 bottom-8 z-50 group"
+          className="group fixed bottom-8 left-5 z-50 flex h-12 w-12 items-center justify-center border border-ink bg-paper text-ink transition-all duration-200 hover:bg-ink hover:text-paper"
         >
-          <div className="relative flex items-center justify-center w-11 h-11 rounded-2xl overflow-hidden shadow-lg">
-            {/* Gradient background */}
-            <div className="absolute inset-0 bg-gradient-to-br from-blue-600 to-purple-600" />
-            {/* Shine overlay */}
-            <div className="absolute inset-0 bg-white/10 opacity-0 group-hover:opacity-100 transition-opacity duration-200" />
-            {/* Glow */}
-            <div className="absolute inset-0 rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-300"
-              style={{ boxShadow: "0 0 20px rgba(37,99,235,0.6)" }} />
-            {/* Arrow */}
-            <motion.div
-              animate={{ y: [0, -3, 0] }}
-              transition={{ duration: 1.6, repeat: Infinity, ease: "easeInOut" }}
-              className="relative z-10"
-            >
-              <ArrowUp className="w-5 h-5 text-white" strokeWidth={2.5} />
-            </motion.div>
-          </div>
+          <ArrowUp className="h-4 w-4" strokeWidth={2} />
         </motion.button>
       )}
     </AnimatePresence>

@@ -2,128 +2,103 @@
 
 import { motion } from "framer-motion";
 import Link from "next/link";
-import {
-  TrendingUp, Brain, LayoutDashboard, PenLine, Settings2,
-  Search, BarChart3, Users, ArrowRight
-} from "lucide-react";
+import { ArrowRight } from "lucide-react";
 import { services } from "@/data/services";
-
-const iconMap: Record<string, React.ComponentType<{ className?: string }>> = {
-  TrendingUp, Brain, LayoutDashboard, PenLine, Settings2, Search, BarChart3, Users,
-};
 
 export default function ServicesPreview() {
   const highlighted = services.filter((s) => s.highlight);
   const others = services.filter((s) => !s.highlight);
 
   return (
-    <section className="py-14 relative overflow-hidden">
-      <div className="absolute inset-0 bg-gradient-to-b from-transparent via-purple-950/10 to-transparent" />
-      <div className="orb orb-purple w-[400px] h-[400px] top-1/2 right-0 opacity-20" />
-
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+    <section className="py-9 sm:py-12">
+      <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         {/* Header */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          className="text-center mb-10 md:mb-14"
+          className="rule-thick mb-8 flex flex-col gap-4 pt-4 sm:flex-row sm:items-end sm:justify-between"
         >
-          <span className="section-label mb-4 inline-flex">What I Offer</span>
-          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold font-heading text-white mt-4">
-            Services Built for <span className="gradient-text">Organic Growth</span>
-          </h2>
-          <p className="text-white/50 mt-3 max-w-xl mx-auto">
-            From first-page Google rankings to AI search visibility — every service I offer
-            is designed to grow your brand&apos;s organic presence.
+          <div>
+            <span className="eyebrow">04 — What I Offer</span>
+            <h2 className="mt-3 font-heading text-4xl font-black tracking-tight text-ink sm:text-5xl">
+              Built for <span className="italic font-light text-vermillion">organic growth</span>
+            </h2>
+          </div>
+          <p className="max-w-xs text-[15px] leading-relaxed text-ink-soft">
+            From first-page Google rankings to AI search visibility — every service grows
+            your brand&apos;s organic presence.
           </p>
         </motion.div>
 
-        {/* Highlighted services - large cards */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-6">
-          {highlighted.map((service, i) => {
-            const Icon = iconMap[service.icon] || TrendingUp;
-            return (
-              <motion.div
-                key={service.id}
-                initial={{ opacity: 0, y: 30 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ delay: i * 0.1 }}
-                className="group"
-              >
-                <div className="glass-card-hover p-6 sm:p-8 h-full relative overflow-hidden">
-                  {/* Gradient accent */}
-                  <div
-                    className={`absolute top-0 left-0 right-0 h-px bg-gradient-to-r ${service.gradient}`}
-                  />
-
-                  <div
-                    className={`w-14 h-14 rounded-2xl bg-gradient-to-br ${service.gradient} p-px mb-6`}
-                  >
-                    <div className="w-full h-full rounded-2xl bg-[#0D1117] flex items-center justify-center">
-                      <Icon className="w-6 h-6 text-white" />
-                    </div>
-                  </div>
-
-                  <h3 className="text-xl font-bold text-white font-heading mb-3">
-                    {service.title}
-                  </h3>
-                  <p className="text-white/55 text-sm leading-relaxed mb-5">
-                    {service.description}
-                  </p>
-
-                  <ul className="space-y-2">
-                    {service.features.slice(0, 3).map((f) => (
-                      <li key={f} className="flex items-center gap-2 text-xs text-white/50">
-                        <span className="w-1 h-1 rounded-full bg-blue-400 flex-shrink-0" />
-                        {f}
-                      </li>
-                    ))}
-                  </ul>
-                </div>
-              </motion.div>
-            );
-          })}
+        {/* Highlighted services */}
+        <div className="grid grid-cols-1 gap-px border border-ink/15 bg-ink/15 md:grid-cols-3">
+          {highlighted.map((service, i) => (
+            <motion.div
+              key={service.id}
+              initial={{ opacity: 0, y: 24 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ delay: i * 0.08 }}
+              className="group bg-paper-card p-8 transition-colors duration-300 hover:bg-paper-deep sm:p-10"
+            >
+              <span className="font-heading text-4xl font-light italic text-ink-faint transition-colors group-hover:text-vermillion">
+                {String(i + 1).padStart(2, "0")}
+              </span>
+              <h3 className="mt-5 font-heading text-2xl font-bold tracking-tight text-ink">
+                {service.title}
+              </h3>
+              <p className="mt-3 text-[15px] leading-relaxed text-ink-soft">
+                {service.description}
+              </p>
+              <ul className="mt-6 space-y-2 border-t border-ink/10 pt-5">
+                {service.features.slice(0, 3).map((f) => (
+                  <li key={f} className="flex items-start gap-2.5 text-sm text-ink-soft">
+                    <span className="mt-[8px] h-px w-4 flex-shrink-0 bg-vermillion" />
+                    {f}
+                  </li>
+                ))}
+              </ul>
+            </motion.div>
+          ))}
         </div>
 
-        {/* Other services - compact grid */}
-        <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-4 mb-10">
-          {others.map((service, i) => {
-            const Icon = iconMap[service.icon] || TrendingUp;
-            return (
-              <motion.div
-                key={service.id}
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ delay: 0.3 + i * 0.07 }}
+        {/* Other services — index list */}
+        <div className="mt-12 grid grid-cols-1 gap-x-12 sm:grid-cols-2">
+          {others.map((service, i) => (
+            <motion.div
+              key={service.id}
+              initial={{ opacity: 0, y: 14 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ delay: 0.2 + i * 0.05 }}
+            >
+              <Link
+                href="/services"
+                className="group flex items-baseline justify-between gap-4 border-b border-ink/15 py-4"
               >
-                <div className="glass-card-hover p-4 h-full flex flex-col items-start gap-3">
-                  <div
-                    className={`w-10 h-10 rounded-xl bg-gradient-to-br ${service.gradient} p-px`}
-                  >
-                    <div className="w-full h-full rounded-xl bg-[#0D1117] flex items-center justify-center">
-                      <Icon className="w-4 h-4 text-white" />
-                    </div>
-                  </div>
-                  <p className="text-sm font-semibold text-white/80 leading-tight">
+                <span className="flex items-baseline gap-4">
+                  <span className="font-mono text-[10px] text-ink-faint">
+                    {String(highlighted.length + i + 1).padStart(2, "0")}
+                  </span>
+                  <span className="font-heading text-lg font-semibold text-ink transition-colors group-hover:text-vermillion">
                     {service.title}
-                  </p>
-                </div>
-              </motion.div>
-            );
-          })}
+                  </span>
+                </span>
+                <ArrowRight className="h-3.5 w-3.5 flex-shrink-0 text-ink-faint transition-all duration-200 group-hover:translate-x-1 group-hover:text-vermillion" />
+              </Link>
+            </motion.div>
+          ))}
         </div>
 
         <motion.div
           initial={{ opacity: 0, y: 10 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          className="text-center"
+          className="mt-12"
         >
-          <Link href="/services" className="btn-primary py-3.5 px-8">
-            Explore All Services
+          <Link href="/services" className="btn-secondary">
+            Explore all services
             <ArrowRight className="w-4 h-4" />
           </Link>
         </motion.div>
