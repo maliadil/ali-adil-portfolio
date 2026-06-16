@@ -1,3 +1,9 @@
+export interface BrandImage {
+  src: string;
+  alt: string;
+  caption: string;
+}
+
 export interface Brand {
   id: string;
   name: string;
@@ -9,6 +15,8 @@ export interface Brand {
   achievements: string[];
   tags: string[];
   featured: boolean;
+  priority?: number;
+  images?: BrandImage[];
 }
 
 export const brands: Brand[] = [
@@ -139,14 +147,28 @@ export const brands: Brand[] = [
     industry: "Creative Agency",
     role: "Content Strategist & Writer",
     description:
-      "Developed compelling brand storytelling and media content that positions the agency as a premium creative partner.",
+      "Built and scaled the SEO content engine for a Dallas video production agency — driving millions of search impressions and earning recommendations in AI search for branded video production.",
     achievements: [
-      "Brand voice development and content guidelines",
-      "Portfolio content showcasing creative work",
-      "SEO-optimized agency service pages",
+      "Scaled to 2.24M search impressions and 4.33K clicks in 12 months",
+      "Recommended by ChatGPT for branded video production in Dallas",
+      "Improved average position to 34.8 with a strong upward trend",
+      "Developed brand storytelling and SEO-optimized service pages",
     ],
-    tags: ["Branding", "Creative", "Agency"],
-    featured: false,
+    tags: ["Branding", "Creative", "SEO", "AI Search"],
+    featured: true,
+    priority: 2,
+    images: [
+      {
+        src: "/clients/thinkbranded-search-performance.webp",
+        alt: "Think Branded Media search performance — 2.24M impressions and 4.33K clicks over 12 months",
+        caption: "2.24M impressions & 4.33K clicks in 12 months",
+      },
+      {
+        src: "/clients/thinkbranded-ai-visibility.webp",
+        alt: "ChatGPT recommending Think Branded Media for branded video production in Dallas",
+        caption: "Recommended by ChatGPT for branded video in Dallas",
+      },
+    ],
   },
   {
     id: "action-1st",
@@ -337,20 +359,64 @@ export const brands: Brand[] = [
   },
   {
     id: "shear-comfort",
-    name: "Shear Comfort",
+    name: "ShearComfort",
     url: "ShearComfort.com",
     niche: "Automotive Seat Covers",
     industry: "Automotive",
-    role: "E-commerce Content Writer",
+    role: "SEO Content Strategist",
     description:
-      "Optimized product content and buying guides for premium automotive seat cover products targeting vehicle enthusiasts.",
+      "Led the SEO content strategy for a premium automotive seat-cover retailer — scaling organic traffic, capturing #1 Google rankings across high-intent buying queries, and earning the top recommendation in AI search.",
     achievements: [
-      "Product page SEO optimization improving organic visibility",
-      "Buying guide content driving high-intent traffic",
-      "Brand comparison content capturing competitive traffic",
+      "Grew organic traffic to 256,629 users in 2025 — up 86% year over year",
+      "Ranked #1 on Google for core seat-cover search terms",
+      "Cited as the #1 recommendation by ChatGPT for waterproof car seat covers",
+      "Optimized product and buying-guide content for high-intent traffic",
     ],
-    tags: ["Automotive", "E-commerce", "Product Content"],
-    featured: false,
+    tags: ["Automotive", "E-commerce", "SEO", "AI Search"],
+    featured: true,
+    priority: 3,
+    images: [
+      {
+        src: "/clients/shearcomfort-organic-traffic.webp",
+        alt: "ShearComfort organic traffic year-over-year, reaching 256,629 users in 2025",
+        caption: "Organic traffic — 256,629 users in 2025, up 86% YoY",
+      },
+      {
+        src: "/clients/shearcomfort-google-rankings.webp",
+        alt: "ShearComfort ranking #1 on Google across multiple seat-cover search queries",
+        caption: "#1 organic rankings across core seat-cover search terms",
+      },
+      {
+        src: "/clients/shearcomfort-ai-visibility.webp",
+        alt: "ChatGPT recommending ShearComfort first for waterproof car seat covers",
+        caption: "Cited #1 by ChatGPT for waterproof car seat covers",
+      },
+    ],
+  },
+  {
+    id: "xjump",
+    name: "XJump",
+    url: "XJump.com",
+    niche: "Recreation & Leisure",
+    industry: "Recreation",
+    role: "SEO Content Strategist",
+    description:
+      "Executed an SEO content strategy that scaled organic search visibility from the ground up — growing impressions and clicks steadily across six months with a consistent upward trend.",
+    achievements: [
+      "Grew search impressions to 105K and clicks to 1.49K in six months",
+      "Improved average position to 26.7 with a steady upward trajectory",
+      "Built an SEO content engine driving compounding organic growth",
+    ],
+    tags: ["Recreation", "SEO", "Organic Growth"],
+    featured: true,
+    priority: 1,
+    images: [
+      {
+        src: "/clients/xjump-search-growth.webp",
+        alt: "XJump search growth — 105K impressions and 1.49K clicks over six months with an upward trend",
+        caption: "105K impressions & 1.49K clicks — climbing for 6 months",
+      },
+    ],
   },
   {
     id: "sporting-tribe",
@@ -372,7 +438,9 @@ export const brands: Brand[] = [
   },
 ];
 
-export const featuredBrands = brands.filter((b) => b.featured);
+export const featuredBrands = brands
+  .filter((b) => b.featured)
+  .sort((a, b) => (b.priority ?? 0) - (a.priority ?? 0));
 
 export const allBrandNames = [
   "SouthernCaliforniaSurrogacy.com",
