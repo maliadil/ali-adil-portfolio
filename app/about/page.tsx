@@ -2,9 +2,14 @@ import type { Metadata } from "next";
 import AboutPage from "@/components/about/AboutPage";
 
 export const metadata: Metadata = {
-  title: "About",
+  title: "SEO & AI Content Strategist, 700+ Articles Ranked",
   description:
-    "Learn about Muhammad Ali Adil — SEO & AI Content Strategist with 5+ years of experience ranking content across 35+ brands in diverse industries.",
+    "SEO and AI content strategist with 5+ years, 700+ ranked articles, and 35+ brands scaled. See Muhammad Ali Adil's SEO, GEO, and content work.",
+  openGraph: {
+    title: "SEO & AI Content Strategist, 700+ Articles Ranked | Muhammad Ali Adil",
+    description:
+      "SEO and AI content strategist with 5+ years, 700+ ranked articles, and 35+ brands scaled. See Muhammad Ali Adil's SEO, GEO, and content work.",
+  },
   alternates: {
     canonical: "https://maliadil.site/about",
   },
