@@ -5,6 +5,9 @@ export const metadata: Metadata = {
   title: "About",
   description:
     "Learn about Muhammad Ali Adil — SEO & AI Content Strategist with 5+ years of experience ranking content across 35+ brands in diverse industries.",
+  alternates: {
+    canonical: "https://maliadil.site/about",
+  },
 };
 
 export default function About() {
