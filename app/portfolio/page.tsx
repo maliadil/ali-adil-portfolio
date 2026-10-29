@@ -5,6 +5,9 @@ export const metadata: Metadata = {
   title: "Portfolio",
   description:
     "Browse Muhammad Ali Adil's portfolio of SEO case studies and content wins across 35+ brands in healthcare, legal, finance, and more.",
+  alternates: {
+    canonical: "https://maliadil.site/portfolio",
+  },
 };
 
 export default function Portfolio() {
