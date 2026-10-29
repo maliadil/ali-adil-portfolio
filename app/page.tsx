@@ -8,9 +8,14 @@ import SkillsSection from "@/components/home/SkillsSection";
 import CTASection from "@/components/home/CTASection";
 
 export const metadata: Metadata = {
-  title: "Muhammad Ali Adil | SEO & AI Content Strategist",
+  title: "SEO & AI Content Strategist | Muhammad Ali Adil",
   description:
-    "Results-driven SEO & AI Content Strategist who has ranked 700+ articles on Google's first page across 35+ brands. Expert in content marketing, LLM optimization, and organic growth strategies.",
+    "Grew one brand to 256,629 organic users in 2025, up 86%, and another to 2.24M impressions. SEO and AI search strategist, 700+ articles, 35+ brands.",
+  openGraph: {
+    title: "SEO & AI Content Strategist | Muhammad Ali Adil",
+    description:
+      "Grew one brand to 256,629 organic users in 2025, up 86%, and another to 2.24M impressions. SEO and AI search strategist, 700+ articles, 35+ brands.",
+  },
   alternates: {
     canonical: "https://maliadil.site",
   },
