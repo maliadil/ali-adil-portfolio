@@ -11,6 +11,9 @@ export const metadata: Metadata = {
   title: "Muhammad Ali Adil | SEO & AI Content Strategist",
   description:
     "Results-driven SEO & AI Content Strategist who has ranked 700+ articles on Google's first page across 35+ brands. Expert in content marketing, LLM optimization, and organic growth strategies.",
+  alternates: {
+    canonical: "https://maliadil.site",
+  },
 };
 
 export default function HomePage() {
