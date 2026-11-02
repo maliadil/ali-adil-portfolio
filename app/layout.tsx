@@ -88,7 +88,7 @@ const jsonLd = {
       "@id": "https://maliadil.site/#person",
       name: "Muhammad Ali Adil",
       url: "https://maliadil.site/",
-      image: "https://maliadil.site/hero.png",
+      image: "https://maliadil.site/hero.webp",
       jobTitle: "SEO & AI Content Strategist",
       description:
         "Results-driven SEO & AI Content Strategist who has ranked 700+ articles on Google's first page across 35+ brands. Expert in content marketing, LLM optimization, and organic growth strategies.",
@@ -123,7 +123,7 @@ const jsonLd = {
       "@id": "https://maliadil.site/#business",
       name: "Muhammad Ali Adil - SEO & AI Content Services",
       url: "https://maliadil.site/services",
-      image: "https://maliadil.site/hero.png",
+      image: "https://maliadil.site/hero.webp",
       description:
         "SEO strategy, AI content optimization, content marketing, and organic growth services by Muhammad Ali Adil. Helping brands rank on Google and AI search.",
       provider: { "@id": "https://maliadil.site/#person" },
