@@ -202,7 +202,7 @@ export default function AboutPage() {
                 <div className="border border-ink bg-paper-card p-3 shadow-print">
                   <div className="relative aspect-[3/4] overflow-hidden bg-paper-deep">
                     <Image
-                      src="/hero.png"
+                      src="/hero.webp"
                       alt="Muhammad Ali Adil — SEO & AI Content Strategist"
                       fill
                       className="print-photo object-cover object-center"
