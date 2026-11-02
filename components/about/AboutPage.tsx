@@ -9,8 +9,8 @@ const ease = [0.22, 1, 0.36, 1] as const;
 
 const timeline = [
   {
-    period: "Aug 2024 – Present",
-    role: "VA Content Writer / Editor",
+    period: "Aug 2024 – May 2026",
+    role: "SEO Executive (Content Writing & Optimization)",
     company: "BlissDrive",
     location: "USA (Remote)",
     type: "Full-time",
@@ -26,7 +26,7 @@ const timeline = [
   },
   {
     period: "2023 – 2024",
-    role: "Content Manager / Writer",
+    role: "Content Manager & Writer",
     company: "SportingTribe",
     location: "Remote",
     type: "Full-time",
@@ -70,8 +70,8 @@ const timeline = [
     ],
   },
   {
-    period: "2019 – 2020",
-    role: "Content Writer",
+    period: "2020 – 2021",
+    role: "Content Writer / Product Reviewer",
     company: "Appuals.com",
     location: "UK (Remote)",
     type: "Contract",
