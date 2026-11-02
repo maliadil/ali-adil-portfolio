@@ -78,7 +78,7 @@ export default function ServicesPage() {
               className="font-heading font-black leading-[0.95] tracking-tight text-ink"
               style={{ fontSize: "clamp(2.6rem, 6vw, 5rem)" }}
             >
-              Built for <span className="italic font-light text-vermillion">organic growth</span>
+              SEO services built for <span className="italic font-light text-vermillion">organic growth</span>
             </h1>
             <p className="mt-6 max-w-2xl text-lg leading-relaxed text-ink-soft">
               From first-page Google rankings to AI search visibility — strategic, data-driven
