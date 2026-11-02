@@ -58,7 +58,7 @@ export default function ContactPage() {
               className="font-heading font-black leading-[0.95] tracking-tight text-ink"
               style={{ fontSize: "clamp(2.6rem, 6.5vw, 5.5rem)" }}
             >
-              Let&apos;s build something
+              Hire an SEO strategist
               <br />
               that <span className="italic font-light text-vermillion">ranks</span>
               <span className="text-vermillion">.</span>
