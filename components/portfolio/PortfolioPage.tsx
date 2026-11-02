@@ -45,7 +45,7 @@ export default function PortfolioPage() {
               className="font-heading font-black leading-[0.95] tracking-tight text-ink"
               style={{ fontSize: "clamp(2.6rem, 6vw, 5rem)" }}
             >
-              SEO wins &amp; <span className="italic font-light text-vermillion">case studies</span>
+              SEO case studies that <span className="italic font-light text-vermillion">rank</span>
             </h1>
             <p className="mt-6 max-w-2xl text-lg leading-relaxed text-ink-soft">
               A showcase of brands ranked on Google&apos;s first page through strategic SEO
