@@ -5,6 +5,7 @@ import Link from "next/link";
 import Image from "next/image";
 import { ArrowRight, ArrowUpRight } from "lucide-react";
 import { featuredBrands } from "@/data/brands";
+import { caseStudySlugByBrandId } from "@/data/case-studies";
 
 export default function FeaturedWork() {
   return (
@@ -97,8 +98,16 @@ export default function FeaturedWork() {
                   {/* Arrow */}
                   <div className="hidden lg:col-span-1 lg:flex lg:justify-end">
                     <Link
-                      href="/portfolio"
-                      aria-label={`View ${brand.name} in the portfolio`}
+                      href={
+                        caseStudySlugByBrandId[brand.id]
+                          ? `/case-studies/${caseStudySlugByBrandId[brand.id]}`
+                          : "/portfolio"
+                      }
+                      aria-label={
+                        caseStudySlugByBrandId[brand.id]
+                          ? `View the ${brand.name} case study`
+                          : `View ${brand.name} in the portfolio`
+                      }
                       className="flex h-11 w-11 items-center justify-center border border-ink/20 text-ink transition-all duration-300 hover:!border-vermillion hover:!bg-vermillion hover:!text-paper group-hover:border-vermillion group-hover:bg-vermillion group-hover:text-paper"
                     >
                       <ArrowUpRight className="h-4 w-4" />
