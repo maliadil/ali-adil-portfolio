@@ -5,6 +5,7 @@ import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import ScrollToTop from "@/components/ScrollToTop";
 import { Toaster } from "sonner";
+import Script from "next/script";
 
 const fraunces = Fraunces({
   subsets: ["latin"],
@@ -228,7 +229,20 @@ export default function RootLayout({
       <body
         className={`${fraunces.variable} ${newsreader.variable} ${jetbrainsMono.variable} font-body`}
       >
-        <script
+<Script
+  src="https://www.googletagmanager.com/gtag/js?id=G-EYS341D4N8"
+  strategy="afterInteractive"
+/>
+<Script id="ga4-config" strategy="afterInteractive">
+  {`
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-EYS341D4N8');
+  `}
+</Script>
+
+  <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
         />
