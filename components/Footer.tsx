@@ -12,11 +12,17 @@ const footerLinks = {
     { label: "Contact", href: "/contact" },
   ],
   Services: [
-    { label: "SEO Strategy", href: "/services" },
-    { label: "AI Content Optimization", href: "/services" },
-    { label: "Content Marketing", href: "/services" },
-    { label: "On-Page SEO", href: "/services" },
-    { label: "Organic Growth", href: "/services" },
+    { label: "SEO Strategy", href: "/services#seo-strategy" },
+    { label: "AI Content Optimization", href: "/services#ai-content-optimization" },
+    { label: "Content Marketing", href: "/services#content-marketing" },
+    { label: "On-Page SEO", href: "/services#on-page-seo" },
+    { label: "Organic Growth", href: "/services#organic-growth" },
+  ],
+  "Case studies": [
+    { label: "ShearComfort: 256,629 users", href: "/case-studies/shear-comfort" },
+    { label: "Think Branded Media: 2.24M impressions", href: "/case-studies/think-branded-media" },
+    { label: "XJump: 105K impressions", href: "/case-studies/xjump" },
+    { label: "All case studies", href: "/case-studies" },
   ],
 };
 
@@ -30,7 +36,7 @@ export default function Footer() {
     <footer className="border-t-2 border-ink bg-paper">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Top section */}
-        <div className="grid grid-cols-1 gap-12 py-16 md:grid-cols-2 lg:grid-cols-4">
+        <div className="grid grid-cols-1 gap-12 py-16 md:grid-cols-2 lg:grid-cols-5">
           {/* Brand */}
           <div className="lg:col-span-2">
             <Link href="/" className="inline-block mb-5">

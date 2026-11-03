@@ -75,6 +75,18 @@ export default function FeaturedWork() {
                       {brand.url}
                       <ArrowUpRight className="h-3 w-3" />
                     </a>
+                    <Link
+                      href={
+                        caseStudySlugByBrandId[brand.id]
+                          ? `/case-studies/${caseStudySlugByBrandId[brand.id]}`
+                          : "/portfolio"
+                      }
+                      className="mt-2 block font-mono text-[11px] text-vermillion underline decoration-vermillion/30 underline-offset-4 transition-colors hover:text-ink"
+                    >
+                      {caseStudySlugByBrandId[brand.id]
+                        ? `View the ${brand.name} case study`
+                        : "View in the portfolio"}
+                    </Link>
                   </div>
 
                   {/* Description + achievements */}

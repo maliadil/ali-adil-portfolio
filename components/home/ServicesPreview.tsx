@@ -59,6 +59,13 @@ export default function ServicesPreview() {
                   </li>
                 ))}
               </ul>
+              <Link
+                href={`/services#${service.id}`}
+                className="link-underline mt-6 inline-flex"
+              >
+                View this service
+                <ArrowRight className="w-3.5 h-3.5" />
+              </Link>
             </motion.div>
           ))}
         </div>
@@ -74,7 +81,7 @@ export default function ServicesPreview() {
               transition={{ delay: 0.2 + i * 0.05 }}
             >
               <Link
-                href="/services"
+                href={`/services#${service.id}`}
                 className="group flex items-baseline justify-between gap-4 border-b border-ink/15 py-4"
               >
                 <span className="flex items-baseline gap-4">

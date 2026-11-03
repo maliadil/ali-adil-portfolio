@@ -1,6 +1,8 @@
 import Image from "next/image";
 import Link from "next/link";
 import type { CaseStudy } from "@/data/case-studies";
+import { caseStudies } from "@/data/case-studies";
+import { serviceIdByTitle } from "@/data/internal-links";
 
 export default function CaseStudyPage({ study }: { study: CaseStudy }) {
   const jsonLd = {
@@ -135,12 +137,59 @@ export default function CaseStudyPage({ study }: { study: CaseStudy }) {
         </div>
       </section>
 
+      <section className="pb-12">
+        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+          <span className="eyebrow">More case studies</span>
+          <div className="mt-6 grid grid-cols-1 gap-px border border-ink/15 bg-ink/15 sm:grid-cols-2">
+            {caseStudies
+              .filter((other) => other.slug !== study.slug)
+              .map((other) => (
+                <Link
+                  key={other.slug}
+                  href={`/case-studies/${other.slug}`}
+                  className="group bg-paper-card p-7"
+                >
+                  <p className="font-mono text-[10px] uppercase tracking-[0.14em] text-vermillion">
+                    {other.client} · {other.industry}
+                  </p>
+                  <p className="mt-3 font-heading text-xl font-bold tracking-tight text-ink group-hover:text-vermillion">
+                    {other.headline}
+                  </p>
+                </Link>
+              ))}
+          </div>
+          <p className="mt-6">
+            <Link href="/case-studies" className="link-underline">
+              View all case studies
+            </Link>
+          </p>
+        </div>
+      </section>
+
       <section className="pb-16">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <span className="eyebrow">Related services</span>
           <p className="mt-6 max-w-3xl text-[15px] leading-relaxed text-ink-soft">
-            This work maps to: {study.relatedServices.join(", ")}. See the
-            full offer on the services page.
+            This work maps to:
+          </p>
+          <ul className="mt-4 flex max-w-3xl flex-wrap gap-x-6 gap-y-3">
+            {study.relatedServices.map((serviceName) => (
+              <li key={serviceName}>
+                <Link
+                  href={`/services#${serviceIdByTitle[serviceName] ?? ""}`}
+                  className="link-underline"
+                >
+                  {serviceName}
+                </Link>
+              </li>
+            ))}
+          </ul>
+          <p className="mt-6 max-w-3xl text-[15px] leading-relaxed text-ink-soft">
+            See the full offer on the{" "}
+            <Link href="/services" className="link-underline">
+              services page
+            </Link>
+            .
           </p>
           <div className="mt-8 flex flex-col gap-4 sm:flex-row">
             <Link href="/services" className="btn-primary w-full sm:w-auto">

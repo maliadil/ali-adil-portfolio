@@ -4,6 +4,7 @@ import { motion } from "framer-motion";
 import Link from "next/link";
 import { ArrowRight } from "lucide-react";
 import { services } from "@/data/services";
+import { proofByServiceId } from "@/data/internal-links";
 
 const process = [
   {
@@ -95,6 +96,7 @@ export default function ServicesPage() {
             {services.map((service, i) => (
               <motion.article
                 key={service.id}
+                id={service.id}
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
@@ -131,6 +133,26 @@ export default function ServicesPage() {
                       </li>
                     ))}
                   </ul>
+                  {proofByServiceId[service.id] ? (
+                    <p className="mt-6 text-sm leading-relaxed text-ink-soft">
+                      See this in practice:{" "}
+                      <Link
+                        href={proofByServiceId[service.id].href}
+                        className="link-underline"
+                      >
+                        {proofByServiceId[service.id].label}
+                        <ArrowRight className="w-3.5 h-3.5" />
+                      </Link>
+                    </p>
+                  ) : (
+                    <p className="mt-6 text-sm leading-relaxed text-ink-soft">
+                      See related work in the{" "}
+                      <Link href="/portfolio" className="link-underline">
+                        portfolio
+                        <ArrowRight className="w-3.5 h-3.5" />
+                      </Link>
+                    </p>
+                  )}
                 </div>
               </motion.article>
             ))}
@@ -235,10 +257,16 @@ export default function ServicesPage() {
               Let&apos;s discuss your goals and build a custom strategy to rank your brand on
               Google and AI search.
             </p>
-            <Link href="/contact" className="btn-primary-inverse mt-9 inline-flex w-full sm:w-auto">
-              Get a free consultation
-              <ArrowRight className="w-4 h-4" />
-            </Link>
+            <div className="mt-9 flex flex-col gap-4 sm:flex-row sm:items-center">
+              <Link href="/contact" className="btn-primary-inverse inline-flex w-full sm:w-auto">
+                Get a free consultation
+                <ArrowRight className="w-4 h-4" />
+              </Link>
+              <Link href="/portfolio" className="btn-secondary-inverse inline-flex w-full sm:w-auto">
+                View the portfolio
+                <ArrowRight className="w-4 h-4" />
+              </Link>
+            </div>
           </motion.div>
         </div>
       </section>

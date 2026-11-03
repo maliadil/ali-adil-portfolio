@@ -4,6 +4,7 @@ import { useState } from "react";
 import Image from "next/image";
 import { motion, AnimatePresence } from "framer-motion";
 import { Search, ArrowUpRight } from "lucide-react";
+import Link from "next/link";
 import { brands } from "@/data/brands";
 import { caseStudySlugByBrandId } from "@/data/case-studies";
 
@@ -344,6 +345,14 @@ export default function PortfolioPage() {
               Google&apos;s AI Overviews. This dual optimization ensures maximum organic
               visibility across all modern search channels.
             </p>
+            <div className="mt-8 flex flex-wrap items-center gap-6">
+              <Link href="/services" className="link-underline">
+                See the services behind these results
+              </Link>
+              <Link href="/contact" className="link-underline">
+                Start a project
+              </Link>
+            </div>
           </motion.aside>
         </div>
       </section>

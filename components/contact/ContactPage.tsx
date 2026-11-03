@@ -1,6 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
+import Link from "next/link";
 import { ArrowRight, ArrowUpRight } from "lucide-react";
 
 const contactInfo = [
@@ -149,6 +150,26 @@ export default function ContactPage() {
                     </li>
                   ))}
                 </ul>
+                <div className="mt-8 border-t border-ink/10 pt-6">
+                  <p className="eyebrow mb-4">Before you write</p>
+                  <ul className="space-y-3">
+                    <li>
+                      <Link href="/services" className="link-underline">
+                        See all services
+                      </Link>
+                    </li>
+                    <li>
+                      <Link href="/portfolio" className="link-underline">
+                        Browse the portfolio
+                      </Link>
+                    </li>
+                    <li>
+                      <Link href="/case-studies/shear-comfort" className="link-underline">
+                        Read the ShearComfort case study
+                      </Link>
+                    </li>
+                  </ul>
+                </div>
               </div>
             </motion.aside>
           </div>

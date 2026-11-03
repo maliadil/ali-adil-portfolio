@@ -9,8 +9,8 @@ const ease = [0.22, 1, 0.36, 1] as const;
 
 const timeline = [
   {
-    period: "Aug 2024 – May 2026",
-    role: "SEO Executive (Content Writing & Optimization)",
+    period: "Aug 2024 – Present",
+    role: "VA Content Writer / Editor",
     company: "BlissDrive",
     location: "USA (Remote)",
     type: "Full-time",
@@ -26,7 +26,7 @@ const timeline = [
   },
   {
     period: "2023 – 2024",
-    role: "Content Manager & Writer",
+    role: "Content Manager / Writer",
     company: "SportingTribe",
     location: "Remote",
     type: "Full-time",
@@ -70,8 +70,8 @@ const timeline = [
     ],
   },
   {
-    period: "2020 – 2021",
-    role: "Content Writer / Product Reviewer",
+    period: "2019 – 2020",
+    role: "Content Writer",
     company: "Appuals.com",
     location: "UK (Remote)",
     type: "Contract",
@@ -390,6 +390,20 @@ export default function AboutPage() {
               Get in touch
               <ArrowRight className="w-4 h-4" />
             </Link>
+            <div className="mt-8 flex flex-wrap items-center gap-6">
+              <Link
+                href="/services"
+                className="inline-flex items-center gap-1.5 font-mono text-[12px] uppercase tracking-[0.18em] text-paper/80 underline decoration-paper/30 underline-offset-4 hover:text-paper"
+              >
+                Explore services
+              </Link>
+              <Link
+                href="/portfolio"
+                className="inline-flex items-center gap-1.5 font-mono text-[12px] uppercase tracking-[0.18em] text-paper/80 underline decoration-paper/30 underline-offset-4 hover:text-paper"
+              >
+                View the portfolio
+              </Link>
+            </div>
           </motion.div>
         </div>
       </section>

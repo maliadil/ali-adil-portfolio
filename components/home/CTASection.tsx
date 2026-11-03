@@ -42,7 +42,19 @@ export default function CTASection() {
             </a>
           </div>
 
-          <p className="mt-10 font-mono text-[10px] uppercase tracking-[0.18em] text-paper/40">
+          <p className="mt-10 text-[15px] leading-relaxed text-paper/65">
+            Not ready yet?{" "}
+            <Link href="/portfolio" className="underline decoration-paper/30 underline-offset-4 hover:text-paper">
+              See the portfolio first
+            </Link>
+            , or read the{" "}
+            <Link href="/case-studies/shear-comfort" className="underline decoration-paper/30 underline-offset-4 hover:text-paper">
+              ShearComfort case study
+            </Link>
+            .
+          </p>
+
+          <p className="mt-6 font-mono text-[10px] uppercase tracking-[0.18em] text-paper/40">
             Typically responds within 24 hours · Available for freelance &amp; full-time
           </p>
         </motion.div>
