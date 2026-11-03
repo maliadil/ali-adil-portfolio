@@ -5,6 +5,7 @@ import Image from "next/image";
 import { motion, AnimatePresence } from "framer-motion";
 import { Search, ArrowUpRight } from "lucide-react";
 import { brands } from "@/data/brands";
+import { caseStudySlugByBrandId } from "@/data/case-studies";
 
 const industries = ["All", ...Array.from(new Set(brands.map((b) => b.industry)))];
 
@@ -138,6 +139,14 @@ export default function PortfolioPage() {
                           {brand.url}
                           <ArrowUpRight className="h-3 w-3" />
                         </a>
+                        {caseStudySlugByBrandId[brand.id] && (
+                          <a
+                            href={`/case-studies/${caseStudySlugByBrandId[brand.id]}`}
+                            className="mt-2 block font-mono text-[11px] text-vermillion underline decoration-vermillion/30 underline-offset-4 transition-colors hover:text-ink"
+                          >
+                            View full case study
+                          </a>
+                        )}
                         <p className="mt-2 font-mono text-[10px] uppercase tracking-[0.14em] text-ink-faint">
                           {brand.niche} · {brand.role}
                         </p>
