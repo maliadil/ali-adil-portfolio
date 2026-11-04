@@ -76,7 +76,7 @@ export default function CaseStudyPage({ study }: { study: CaseStudy }) {
       {study.sections.map((section) => (
         <section key={section.heading} className="pb-12">
           <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-            <span className="eyebrow">{section.heading}</span>
+            <h2 className="eyebrow">{section.heading}</h2>
             {section.paragraphs.map((para, i) => (
               <p
                 key={i}
@@ -101,7 +101,7 @@ export default function CaseStudyPage({ study }: { study: CaseStudy }) {
 
       <section className="pb-12">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-          <span className="eyebrow">Evidence</span>
+          <h2 className="eyebrow">Evidence</h2>
           <div className="mt-6 grid grid-cols-1 gap-5 sm:grid-cols-2 lg:grid-cols-3">
             {study.evidence.map((img) => (
               <a
@@ -129,7 +129,7 @@ export default function CaseStudyPage({ study }: { study: CaseStudy }) {
 
       <section className="pb-12">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-          <span className="eyebrow">Project takeaway</span>
+          <h2 className="eyebrow">Project takeaway</h2>
           {study.takeaway.map((para, i) => (
             <p
               key={i}
@@ -154,7 +154,7 @@ export default function CaseStudyPage({ study }: { study: CaseStudy }) {
 
       <section className="pb-12">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-          <span className="eyebrow">More case studies</span>
+          <h2 className="eyebrow">More case studies</h2>
           <div className="mt-6 grid grid-cols-1 gap-px border border-ink/15 bg-ink/15 sm:grid-cols-2">
             {caseStudies
               .filter((other) => other.slug !== study.slug)
@@ -183,7 +183,7 @@ export default function CaseStudyPage({ study }: { study: CaseStudy }) {
 
       <section className="pb-16">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-          <span className="eyebrow">Related services</span>
+          <h2 className="eyebrow">Related services</h2>
           <p className="mt-6 max-w-3xl text-[15px] leading-relaxed text-ink-soft">
             This work maps to:
           </p>

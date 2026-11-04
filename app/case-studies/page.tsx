@@ -3,7 +3,7 @@ import Link from "next/link";
 import { caseStudies } from "@/data/case-studies";
 
 export const metadata: Metadata = {
-  title: "SEO Case Studies | Muhammad Ali Adil",
+  title: "SEO Case Studies",
   description:
     "SEO case studies with proof: ShearComfort at 256,629 organic users in 2025, Think Branded Media at 2.24M impressions in 12 months, and XJump at 105K impressions in 6 months.",
   openGraph: {
