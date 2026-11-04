@@ -48,7 +48,7 @@ const faqs = [
   },
   {
     q: "Can you manage content for multiple brands simultaneously?",
-    a: "Absolutely. I currently manage content operations across 12+ brands at BlissDrive, maintaining consistent quality and individual brand voice for each.",
+    a: "Absolutely. I managed content operations across 12+ brands at BlissDrive, maintaining consistent quality and individual brand voice for each.",
   },
   {
     q: "What's your typical turnaround time?",
