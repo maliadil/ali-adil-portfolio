@@ -57,7 +57,7 @@ export default function CaseStudyPage({ study }: { study: CaseStudy }) {
 
       <section className="pb-12">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-          <span className="eyebrow">Results</span>
+          <span className="eyebrow">Reported results</span>
           <div className="mt-6 grid grid-cols-1 gap-px border border-ink/15 bg-ink/15 sm:grid-cols-2 lg:grid-cols-4">
             {study.stats.map((stat) => (
               <div key={stat.label} className="bg-paper-card p-7">
@@ -73,19 +73,31 @@ export default function CaseStudyPage({ study }: { study: CaseStudy }) {
         </div>
       </section>
 
-      <section className="pb-12">
-        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-          <span className="eyebrow">What was done</span>
-          <ul className="mt-6 max-w-3xl space-y-3">
-            {study.workDone.map((item) => (
-              <li key={item} className="flex items-start gap-2.5 text-[15px] leading-relaxed text-ink-soft">
-                <span className="mt-[7px] h-px w-4 flex-shrink-0 bg-vermillion" />
-                {item}
-              </li>
+      {study.sections.map((section) => (
+        <section key={section.heading} className="pb-12">
+          <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+            <span className="eyebrow">{section.heading}</span>
+            {section.paragraphs.map((para, i) => (
+              <p
+                key={i}
+                className="mt-6 max-w-3xl text-[15px] leading-relaxed text-ink-soft"
+              >
+                {para}
+              </p>
             ))}
-          </ul>
-        </div>
-      </section>
+            {section.bullets && (
+              <ul className="mt-6 max-w-3xl space-y-3">
+                {section.bullets.map((item) => (
+                  <li key={item} className="flex items-start gap-2.5 text-[15px] leading-relaxed text-ink-soft">
+                    <span className="mt-[7px] h-px w-4 flex-shrink-0 bg-vermillion" />
+                    {item}
+                  </li>
+                ))}
+              </ul>
+            )}
+          </div>
+        </section>
+      ))}
 
       <section className="pb-12">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
@@ -117,23 +129,26 @@ export default function CaseStudyPage({ study }: { study: CaseStudy }) {
 
       <section className="pb-12">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-          <span className="eyebrow">How to read these numbers</span>
-          <ul className="mt-6 max-w-3xl space-y-3">
-            {study.readingNotes.map((note) => (
-              <li key={note} className="flex items-start gap-2.5 text-[15px] leading-relaxed text-ink-soft">
-                <span className="mt-[7px] h-px w-4 flex-shrink-0 bg-vermillion" />
-                {note}
-              </li>
-            ))}
-          </ul>
-          <p className="mt-8 max-w-3xl text-[15px] leading-relaxed text-ink-soft">
-            Not stated in the portfolio data, and not claimed here:{" "}
-            {study.notStated.join(" ")}
-          </p>
+          <span className="eyebrow">Project takeaway</span>
+          {study.takeaway.map((para, i) => (
+            <p
+              key={i}
+              className="mt-6 max-w-3xl text-[15px] leading-relaxed text-ink-soft"
+            >
+              {para}
+            </p>
+          ))}
+          <h2 className="mt-10 max-w-3xl font-heading text-3xl font-black tracking-tight text-ink">
+            {study.ctaHeading}
+          </h2>
           <p className="mt-4 max-w-3xl text-[15px] leading-relaxed text-ink-soft">
-            If you want those details added, they need to come from the
-            original reports and work records, not from this page.
+            {study.ctaText}
           </p>
+          <div className="mt-6">
+            <Link href="/contact" className="btn-primary">
+              {study.ctaLabel}
+            </Link>
+          </div>
         </div>
       </section>
 

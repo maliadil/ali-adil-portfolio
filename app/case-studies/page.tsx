@@ -29,7 +29,7 @@ export default function CaseStudiesIndex() {
             style={{ fontSize: "clamp(2.6rem, 6vw, 5rem)" }}
           >
             Real results, backed by{" "}
-<span className="italic font-light text-vermillion">proof</span>
+            <span className="italic font-light text-vermillion">proof</span>
           </h1>
           <p className="mt-6 max-w-2xl text-lg leading-relaxed text-ink-soft">
             Three full case studies, each with its headline result, the work

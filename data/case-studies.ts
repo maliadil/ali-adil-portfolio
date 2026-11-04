@@ -9,6 +9,12 @@ export interface CaseStudyStat {
   label: string;
 }
 
+export interface CaseStudySection {
+  heading: string;
+  paragraphs: string[];
+  bullets?: string[];
+}
+
 export interface CaseStudy {
   slug: string;
   client: string;
@@ -21,10 +27,12 @@ export interface CaseStudy {
   intro: string;
   periodNote: string;
   stats: CaseStudyStat[];
-  workDone: string[];
+  sections: CaseStudySection[];
   evidence: CaseStudyImage[];
-  readingNotes: string[];
-  notStated: string[];
+  takeaway: string[];
+  ctaHeading: string;
+  ctaText: string;
+  ctaLabel: string;
   relatedServices: string[];
 }
 
@@ -34,22 +42,51 @@ export const caseStudies: CaseStudy[] = [
     client: "ShearComfort",
     clientUrl: "ShearComfort.com",
     niche: "Automotive Seat Covers",
-    industry: "Automotive",
+    industry: "Automotive accessories",
     role: "SEO Content Strategist",
-    title: "ShearComfort Case Study: 256,629 Users in 2025",
-    headline: "ShearComfort: 256,629 organic users in 2025",
+    title: "ShearComfort: SEO Content Supporting 256,629 Organic Users in 2025",
+    headline: "ShearComfort: SEO Content Supporting 256,629 Organic Users in 2025",
     intro:
-      "Led the SEO content strategy for a premium automotive seat-cover retailer, scaling organic traffic, capturing #1 Google rankings across high-intent buying queries, and earning the top recommendation in AI search.",
-    periodNote: "Reported period: 2025, compared with the prior year. Exact start and end dates are not stated in the portfolio data.",
+      "SEO content strategy for an automotive seat-cover retailer, with reported organic user growth of 86% year over year.",
+    periodNote: "Reported period: 2025, compared with the previous year.",
     stats: [
       { value: "256,629", label: "Organic users in 2025" },
-      { value: "+86%", label: "Year-over-year growth" },
-      { value: "#1", label: "Google rankings for core seat-cover terms" },
-      { value: "#1", label: "ChatGPT recommendation for waterproof car seat covers, as shown in the screenshot" },
+      { value: "+86%", label: "Year-over-year growth in organic users" },
+      { value: "#1", label: "Google positions for seat-cover searches, examples shown in the ranking screenshots" },
+      { value: "#1", label: "ChatGPT recommendation for a waterproof seat-cover query, as shown in the screenshot" },
     ],
-    workDone: [
-      "Led the SEO content strategy for the retailer",
-      "Optimized product and buying-guide content for high-intent traffic",
+    sections: [
+      {
+        heading: "Project overview",
+        paragraphs: [
+          "ShearComfort sells automotive seat covers — a product category where shoppers need to understand fit, materials, protection, and suitability before choosing what to buy.",
+          "My contribution focused on SEO content strategy and the optimization of product and buying-guide content for relevant purchasing searches. The goal was to connect the information shoppers needed with the products the retailer offered.",
+        ],
+      },
+      {
+        heading: "My contribution",
+        paragraphs: [
+          "I worked on the content side of the retailer's organic search strategy, with responsibility for aligning product and buying-guide content with high-intent searches.",
+          "The emphasis was on useful content with a clear commercial purpose: helping potential customers understand their options and move toward a suitable product.",
+        ],
+        bullets: [
+          "Product content: Helping pages address the information shoppers need when evaluating seat covers.",
+          "Buying-guide content: Supporting searches from people comparing options and deciding which type of seat cover fits their needs.",
+        ],
+      },
+      {
+        heading: "Reported results",
+        paragraphs: [
+          "These figures describe website performance during the reporting period. My contribution was to the SEO content work supporting that performance; the figures do not isolate the effect of my work from other SEO, website, or marketing activity.",
+        ],
+      },
+      {
+        heading: "Visibility in AI search",
+        paragraphs: [
+          "An accompanying screenshot also shows ChatGPT recommending ShearComfort for a waterproof seat-cover query.",
+          "This provides an example of the brand appearing during an AI-assisted product search. It represents the response to that particular prompt at the time it was captured, rather than a permanent position or a result guaranteed across different searches.",
+        ],
+      },
     ],
     evidence: [
       {
@@ -68,14 +105,14 @@ export const caseStudies: CaseStudy[] = [
         caption: "Cited #1 by ChatGPT for waterproof car seat covers",
       },
     ],
-    readingNotes: [
-      "The 256,629 figure is organic users, not impressions or sales. It is the headline result from the portfolio data.",
-      "The ChatGPT result is a screenshot observation. It shows the recommendation for that prompt at the time of the screenshot, not a permanent ranking.",
+    takeaway: [
+      "This project connects SEO content with the questions people ask before purchasing an automotive product.",
+      "The reported results show substantial organic reach during the period. My role centered on making product and buying-guide content relevant to those searches and useful to prospective customers.",
     ],
-    notStated: [
-      "Baseline user count before this work, so the 86% growth cannot be recomputed from this page alone.",
-      "Exact work dates, pages produced, and the split between this work and other team contributions.",
-    ],
+    ctaHeading: "Need content that supports product discovery?",
+    ctaText:
+      "I help businesses develop and improve SEO content around the questions, comparisons, and decisions that matter to their customers.",
+    ctaLabel: "Discuss your project",
     relatedServices: ["SEO Content Writing", "On-Page SEO Optimization", "AI & LLM Content Optimization"],
   },
   {
@@ -83,22 +120,60 @@ export const caseStudies: CaseStudy[] = [
     client: "Think Branded Media",
     clientUrl: "ThinkBrandedMedia.com",
     niche: "Branding & Media",
-    industry: "Creative Agency",
+    industry: "Video production and creative services",
     role: "Content Strategist & Writer",
-    title: "Think Branded Media Case Study: 2.24M Impressions",
-    headline: "Think Branded Media: 2.24M impressions in 12 months",
+    title: "Think Branded Media: 2.24 Million Search Impressions in 12 Months",
+    headline: "Think Branded Media: 2.24 Million Search Impressions in 12 Months",
     intro:
-      "Built and scaled the SEO content engine for a Dallas video production agency, driving millions of search impressions and earning recommendations in AI search for branded video production.",
-    periodNote: "Reported period: 12 months. Exact start and end dates are not stated in the portfolio data.",
+      "SEO content strategy and writing for a Dallas video production agency, supporting visibility across relevant searches.",
+    periodNote: "Reported period: 12 months.",
     stats: [
       { value: "2.24M", label: "Search impressions in 12 months" },
-      { value: "4.33K", label: "Clicks in 12 months" },
-      { value: "0.19%", label: "Click-through rate, calculated from the reported figures (4,330 / 2,240,000)" },
-      { value: "34.8", label: "Average position, with a strong upward trend" },
+      { value: "4,330", label: "Organic search clicks in 12 months" },
+      { value: "0.19%", label: "Click-through rate, calculated from the displayed, rounded impression and click figures" },
+      { value: "34.8", label: "Average search position" },
     ],
-    workDone: [
-      "Built and scaled the SEO content engine for the agency",
-      "Developed brand storytelling and SEO-optimized service pages",
+    sections: [
+      {
+        heading: "Project overview",
+        paragraphs: [
+          "Think Branded Media provides video production services in Dallas. Its content needs to explain the agency's capabilities while helping prospective clients understand how those services relate to their projects.",
+          "My work combined content strategy, brand storytelling, and SEO-focused service-page writing. The aim was to make the agency's expertise easier to discover and its services easier to understand.",
+        ],
+      },
+      {
+        heading: "My contribution",
+        paragraphs: [
+          "I contributed to the agency's SEO content operation through content strategy and writing, including the development of service-page content.",
+          "This supported a content presence that could introduce the agency to searchers while giving visitors a clearer understanding of its services.",
+        ],
+        bullets: [
+          "Search relevance: Connecting service content with the topics and needs prospective clients search for.",
+          "Brand communication: Explaining the agency's offering through clear, relevant storytelling.",
+        ],
+      },
+      {
+        heading: "Reported results",
+        paragraphs: [
+          "The CTR is approximately 0.19%, calculated from the displayed, rounded impression and click figures.",
+          "These are website-level search results for the reporting period. My contribution was to content strategy and writing within the broader work supporting that visibility.",
+        ],
+      },
+      {
+        heading: "What the results show",
+        paragraphs: [
+          "The report demonstrates that the website appeared frequently in search results and received 4,330 clicks from those appearances.",
+          "Impressions measure search visibility; clicks measure visits from search results. Neither figure establishes how many enquiries or customers the website generated.",
+          "The average position summarizes appearances across different searches during the period. Individual queries can perform very differently, so it should not be interpreted as a fixed ranking for the website.",
+        ],
+      },
+      {
+        heading: "Visibility in AI search",
+        paragraphs: [
+          "A supporting screenshot shows ChatGPT recommending Think Branded Media in response to a query about branded video production in Dallas.",
+          "This is a documented example of the agency appearing in an AI-generated recommendation. The observation applies to the specific prompt and response captured.",
+        ],
+      },
     ],
     evidence: [
       {
@@ -112,16 +187,15 @@ export const caseStudies: CaseStudy[] = [
         caption: "Recommended by ChatGPT for branded video in Dallas",
       },
     ],
-    readingNotes: [
-      "Impressions are not sales or leads. The 0.19% click-through rate is calculated from the reported impressions and clicks, and it is low on its own, which is why it is shown here rather than hidden.",
-      "An average position of 34.8 means most impressions did not come from top-10 positions. The upward trend in position is part of the result, not a claim that every query ranked on page one.",
-      "The ChatGPT result is a screenshot observation for branded video production in Dallas, not a permanent ranking.",
+    takeaway: [
+      "This project demonstrates my work at the intersection of SEO content and service-business communication.",
+      "The content needed to help people discover the agency and understand what it offered. The performance report provides evidence of search exposure and clicks during the period, while the service-page work shows the practical focus of my contribution.",
     ],
-    notStated: [
-      "Baseline impressions, clicks, and position before this work.",
-      "Exact work dates, pages produced, query mix, and the split between this work and other team contributions.",
-    ],
-    relatedServices: ["Content Marketing & Strategy", "AI & LLM Content Optimization", "SEO Strategy & Planning"],
+    ctaHeading: "Make your services easier to discover and understand",
+    ctaText:
+      "I help service businesses develop SEO content that explains their expertise, answers prospective clients' questions, and supports a clear path to enquiry.",
+    ctaLabel: "Discuss your content needs",
+    relatedServices: ["Content Marketing & Strategy", "SEO Content Writing"],
   },
   {
     slug: "xjump",
@@ -130,20 +204,47 @@ export const caseStudies: CaseStudy[] = [
     niche: "Recreation & Leisure",
     industry: "Recreation",
     role: "SEO Content Strategist",
-    title: "XJump Case Study: 105K Impressions in 6 Months",
-    headline: "XJump: 105K impressions in 6 months",
+    title: "XJump: 105,000 Search Impressions and 1,490 Clicks in Six Months",
+    headline: "XJump: 105,000 Search Impressions and 1,490 Clicks in Six Months",
     intro:
-      "Executed an SEO content strategy that scaled organic search visibility from the ground up, growing impressions and clicks steadily across six months with a consistent upward trend.",
-    periodNote: "Reported period: six months. Exact start and end dates are not stated in the portfolio data.",
+      "SEO content strategy supporting organic visibility for a business in the recreation sector.",
+    periodNote: "Reported period: six months.",
     stats: [
-      { value: "105K", label: "Search impressions in six months" },
-      { value: "1.49K", label: "Clicks in six months" },
-      { value: "1.42%", label: "Click-through rate, calculated from the reported figures (1,490 / 105,000)" },
-      { value: "26.7", label: "Average position, with a steady upward trajectory" },
+      { value: "105,000", label: "Search impressions in six months" },
+      { value: "1,490", label: "Organic search clicks in six months" },
+      { value: "1.42%", label: "Click-through rate, calculated from the displayed, rounded impression and click figures" },
+      { value: "26.7", label: "Average search position" },
     ],
-    workDone: [
-      "Executed the SEO content strategy from the ground up",
-      "Built an SEO content engine driving compounding organic growth",
+    sections: [
+      {
+        heading: "Project overview",
+        paragraphs: [
+          "My work with XJump focused on developing and executing an SEO content strategy to support its organic search presence.",
+          "The project emphasized building a consistent approach to content and establishing visibility across relevant searches. The accompanying Search Console report documents the website's performance over a six-month period.",
+        ],
+      },
+      {
+        heading: "My contribution",
+        paragraphs: [
+          "I worked on the strategy and execution of XJump's SEO content activity.",
+          "My contribution centered on establishing a content approach that supported organic discovery and could be developed over time. This connected the direction of the content work with the broader objective of increasing the website's visibility in search.",
+          "The performance evidence presented here relates to the website as a whole during the reporting period, rather than an isolated measurement of individual articles or changes.",
+        ],
+      },
+      {
+        heading: "Reported results",
+        paragraphs: [
+          "The CTR is approximately 1.42%, calculated from the displayed, rounded impression and click figures.",
+        ],
+      },
+      {
+        heading: "What the results show",
+        paragraphs: [
+          "The report records 105,000 appearances in search results and 1,490 clicks during the six-month window.",
+          "These figures establish that the website was gaining search exposure and attracting visits. They do not, on their own, establish revenue, lead generation, or the increase from a previous period.",
+          "The reported average position of 26.7 describes the combined search appearances in the report. It does not mean every keyword ranked at that position, or establish what proportion of impressions came from the top 10.",
+        ],
+      },
     ],
     evidence: [
       {
@@ -152,15 +253,15 @@ export const caseStudies: CaseStudy[] = [
         caption: "105K impressions & 1.49K clicks - climbing for 6 months",
       },
     ],
-    readingNotes: [
-      "This is a from-the-ground-up growth story, not a top-10 story. An average position of 26.7 means most impressions were still outside the top 10 during this period.",
-      "Impressions and clicks are visibility measures, not sales or leads.",
+    takeaway: [
+      "This project reflects my contribution to developing an SEO content strategy and supporting its execution.",
+      "The reported results provide a measurable record of the website's search visibility during the period. They also establish a useful reference point for evaluating future content work through changes in relevant queries, page performance, and organic clicks.",
     ],
-    notStated: [
-      "Baseline impressions, clicks, and position before this work.",
-      "Exact work dates, pages produced, query mix, and the split between this work and other team contributions.",
-    ],
-    relatedServices: ["Organic Growth Strategy", "SEO Strategy & Planning", "SEO Content Writing"],
+    ctaHeading: "Build a clearer direction for your SEO content",
+    ctaText:
+      "I help businesses plan and develop content around relevant search opportunities, with a practical focus on useful pages and measurable performance.",
+    ctaLabel: "Discuss your SEO content project",
+    relatedServices: ["SEO Strategy & Planning", "SEO Content Writing", "Organic Growth Strategy"],
   },
 ];
 

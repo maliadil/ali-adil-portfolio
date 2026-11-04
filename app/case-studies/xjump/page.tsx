@@ -3,13 +3,13 @@ import CaseStudyPage from "@/components/case-studies/CaseStudyPage";
 import { caseStudyBySlug } from "@/data/case-studies";
 
 export const metadata: Metadata = {
-  title: "XJump Case Study: 105K Impressions in 6 Months",
+  title: "XJump: 105,000 Search Impressions and 1,490 Clicks in Six Months",
   description:
-    "XJump SEO case study: 105K search impressions and 1.49K clicks in six months, with average position improving to 26.7 and a steady upward trend from the ground up.",
+      "XJump SEO case study: 105,000 search impressions and 1,490 clicks in six months, with a 1.42% click-through rate and an average position of 26.7.",
   openGraph: {
-    title: "XJump Case Study: 105K Impressions in 6 Months | Muhammad Ali Adil",
+    title: "XJump: 105,000 Search Impressions and 1,490 Clicks in Six Months | Muhammad Ali Adil",
     description:
-      "XJump SEO case study: 105K search impressions and 1.49K clicks in six months, with average position improving to 26.7 and a steady upward trend from the ground up.",
+      "XJump SEO case study: 105,000 search impressions and 1,490 clicks in six months, with a 1.42% click-through rate and an average position of 26.7.",
   },
   alternates: {
     canonical: "https://maliadil.site/case-studies/xjump",
